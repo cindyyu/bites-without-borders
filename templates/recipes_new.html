@@ -1,0 +1,19 @@
+{{ header }}
+<h2>New Recipe</h2>
+<form action="" method="post">
+  <label for="name">Recipe Name</label>
+  <input type="text" name="name" />
+  <label for="cooktime">Cook Time</label>
+  <input type="text" name="cooktime" />
+  <label for="instructions">Instructions</label>
+  <textarea name="instructions" placeholder="instructions here"></textarea>
+  <label for="servings">Servings</label>
+  <input type="text" name="servings" />
+  <input type="hidden" name="author" value="{{ userID }}" />
+  <label for="location">Location</label>
+  <input type="text" name="location" />
+  <label for="ingredients">Ingredients</label>
+  <input type="checkbox" name="ingredients" value="hi" />
+  <input type="checkbox" name="ingredients" value="bleh" />
+  <input type="submit" value="submit" />
+</form>

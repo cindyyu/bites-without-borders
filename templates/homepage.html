@@ -1,0 +1,9 @@
+{{ header }}
+
+{% if first_time %}
+  welcome for the first time!
+{% else %}
+  welcome back
+{% endif %}
+
+<a href="{{ logout_url }}">logout</a>
