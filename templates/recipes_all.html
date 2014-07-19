@@ -1,0 +1,6 @@
+{% for recipe in recipes %}
+	<div>
+		<h1>{{ recipe.name }}</h1>
+		<a href="{{ recipe.viewUrl() }}">view more</a>
+	</div>
+{% endfor %}

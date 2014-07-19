@@ -1,0 +1,19 @@
+{{ header }}
+{% if error %}
+<h2>oh no</h2>
+	{{ error }}
+{% else %}
+<h2>{{ recipe.name }}</h2>
+<p>posted by {{ recipe.author }}</p>
+<p>posted from {{ recipe.location }}</p>
+<p>serves {{ recipe.servings }}</p>
+<p>it takes {{ recipe.cooktime }} to cook</p>
+<p>it requires the following ingredients</p>
+<ul>
+	{% for ingredient in recipe.ingredients %}
+		<li>{{ ingredient }}</li>
+	{% endfor %}
+</ul>
+<h2>instructions</h2>
+{{ recipe.instructions }}
+{% endif %}

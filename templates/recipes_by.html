@@ -1,0 +1,12 @@
+{% if error %}
+	{{ error }}
+{% else %}
+<h1>recipes by {{ recipes[0].author }}</h1>
+
+{% for recipe in recipes %}
+	<b>recipe name</b> {{ recipe.name }}
+	<b>recipe ingredients</b> {{ recipe.ingredients }}
+	<a href="{{ recipe.viewUrl() }}">view more</a>
+{% endfor %}
+
+{% endif %}

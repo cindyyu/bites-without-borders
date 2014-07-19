@@ -1,1 +1,31 @@
-recipe added!
+<!DOCTYPE html>
+<html>
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      var addNewIngredient = function() {
+        $("body").append("<input type='text' class='ingredient' /><br />");
+      }
+      $(document).ready(
+        function() {
+          $("a#newRow").on('click', addNewIngredient);
+        }
+      );
+    </script>
+  </head>
+  <body>
+  The following recipe has been added: 
+  <h2>{{ recipe_added.name }}</h2>
+  by {{ recipe_added.author }}<br />
+  Takes {{ recipe_added.cook_time }} long to cook and serves {{ recipe_added.servings }}<br />
+  <h3>Instructions</h3>
+  {{ recipe_added.instructions }}
+  <h3>Location</h3>
+  {{ recipe_added.location }}
+  <h3>Ingredients</h3>
+  {% for ingredient in recipe_added.ingredients %}
+    {{ ingredient }}
+  {% endfor %}<br /><br />
+  {{ newRecipe }}
+  </body>
+</html>
