@@ -67,14 +67,16 @@ class NewRecipe(webapp2.RequestHandler):
     self.response.write(NewRecipePage)
   def post(self):
     # handles recipe submissions
-    from StringIO import StringIO
+    import re
+    GeoPt(re.sub("[()]", "", self.request.get('location')))
+    self.request.get('location')
     recipe_added = {
       'name' : self.request.get('name'),
       'cook_time' : self.request.get('cooktime'),
       'instructions' : self.request.get('instructions'),
       'servings' : int(self.request.get('servings')), 
       'author' : self.request.get('author'), 
-      'location' : GeoPt(self.request.get('location')),
+      'location' : GeoPt(re.sub("[()]", "", self.request.get('location'))),
       'ingredients' : json.loads(str(self.request.get('ingredients')))
     }
     newRecipe = Recipe(

@@ -2,7 +2,9 @@
 <html>
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
+      var geocoder;
       var addNewIngredient = function() {
         $("div#ingredientcontainer").append("<input type='text' class='ingredient' /><br />");
       }
@@ -19,7 +21,9 @@
         // creates a string that we'll decode in python 
         ingredientsString = "";
         for (i = 0; i < ingredients.length; i++) {
-          if (i == 0) {
+          if (i == 0 && i == ingredients.length - 1) {
+            ingredientsString = "[\"" + ingredients[i] + "\"]";
+          } else if (i == 0) {
             ingredientsString = "[\"" + ingredients[i] + "\"";
           } else if (i == ingredients.length - 1) {
             ingredientsString = ingredientsString + ", \"" + ingredients[i] + "\"]";
@@ -29,6 +33,17 @@
         }
         // adds that string to a hidden textfield 
         $("#allIngredients").val( ingredientsString );
+        
+        // gets city and converts to geopoint for database
+        geocoder = new google.maps.Geocoder();
+        var location = $("#location").val();
+        geocoder.geocode( { 'address': location}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            $("input#latlng").val( results[0].geometry.location );
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
         $("form").submit();
       }
       $(document).ready(
@@ -53,7 +68,8 @@
       <input type="text" name="servings" /><br />
       <input type="hidden" name="author" value="{{ userID }}" /><br />
       <label for="location">Location</label><br />
-      <input type="text" name="location" /><br />
+      <input type="hidden" name="location" id="latlng" />
+      <input type="text" id="location" /><br />
       <label for="ingredients">Ingredients</label><br />
       <div id="ingredientcontainer">
         <input type="text" class="ingredient" /><br />

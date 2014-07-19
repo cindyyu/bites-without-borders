@@ -1,0 +1,859 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"addI",
+				"addIngredientToList"
+			],
+			[
+				"string",
+				"stringLength"
+			],
+			[
+				"stre",
+				"stringLengthHalf"
+			],
+			[
+				"str",
+				"stringLength"
+			],
+			[
+				"check",
+				"checkZodiac"
+			],
+			[
+				"horoscop",
+				"horoscopePage"
+			],
+			[
+				"potent",
+				"potentialFirstWords"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bore",
+				"border-radius"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"row",
+				"rowOfStars"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"fi",
+				"filename"
+			],
+			[
+				"txt",
+				"txt_again"
+			],
+			[
+				"file",
+				"file_again"
+			],
+			[
+				"pr",
+				"prompt"
+			],
+			[
+				"tabb",
+				"tabby_cat"
+			],
+			[
+				"for",
+				"formatter"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"col--1-",
+				"col--1-of-2"
+			],
+			[
+				"or",
+				"orange-border-bottom"
+			],
+			[
+				"border",
+				"orange-border-bottom"
+			],
+			[
+				"orange-",
+				"orange-light"
+			],
+			[
+				"col",
+				"col--1-of-1"
+			],
+			[
+				"grey",
+				"grey-dark"
+			],
+			[
+				"Proxim",
+				"ProximaNova-Regular"
+			],
+			[
+				"data",
+				"dataString"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"i",
+				"inline-table"
+			],
+			[
+				"spac",
+				"border-spacing"
+			],
+			[
+				"rbg",
+				"rgba()"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"iin",
+				"inline-block"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"random",
+				"randomNumber"
+			],
+			[
+				"rand",
+				"randomNumber"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"Qua",
+				"Quattrocento"
+			],
+			[
+				"inpu",
+				"input-text"
+			],
+			[
+				"border-radius",
+				"border-top-right-radius"
+			],
+			[
+				"stash",
+				"stashFood"
+			],
+			[
+				"housingMate",
+				"housingMateFood"
+			],
+			[
+				"retr",
+				"retrieveFoods"
+			],
+			[
+				"housing",
+				"housingMates"
+			],
+			[
+				"retre",
+				"retrieveHousingMates"
+			],
+			[
+				"sta",
+				"stashArray"
+			],
+			[
+				"retriev",
+				"retrieveFoods"
+			],
+			[
+				"add",
+				"addFoodButton"
+			],
+			[
+				"food",
+				"foodID"
+			],
+			[
+				"email",
+				"email"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"last",
+				"lastName"
+			],
+			[
+				"conf",
+				"confirmPassword"
+			],
+			[
+				"first",
+				"firstName"
+			],
+			[
+				"mysql_fetch",
+				"mysql_fetch_array"
+			],
+			[
+				"pos",
+				"positfromleft"
+			],
+			[
+				"posit",
+				"positfromright"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"ava",
+				"avatar"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"req",
+				"req_exp"
+			],
+			[
+				"inlie",
+				"inline-block"
+			],
+			[
+				"randomCell1",
+				"randomCell1number"
+			],
+			[
+				"cells",
+				"cellsarray"
+			],
+			[
+				"randomc",
+				"randomCell2number"
+			],
+			[
+				"randomCell",
+				"randomCell2bg"
+			],
+			[
+				"randomC",
+				"randomCell1number"
+			],
+			[
+				"int",
+				"parseInt"
+			],
+			[
+				"cell",
+				"cellsarray"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 74.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"PACKAGE control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"theme",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"package Control:",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 550.0
+	},
+	"console":
+	{
+		"height": 51.0,
+		"history":
+		[
+			"view.options().get('tabSize')",
+			"view.options().set('tabSize', 2)",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation') ",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation') ",
+			" import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')",
+			" import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation') ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')",
+			" import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation') "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_by.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/homepage_header.html",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/Colorsublime/Colorsublime.sublime-settings",
+		"/Users/cindy/Documents/Practice/bigrams.py",
+		"/Users/cindy/Documents/Practice/removechar.py",
+		"/Users/cindy/Documents/Practice/palindrome.py",
+		"/Users/cindy/Dropbox/CSSI/app-engine-2/cold-reading/templates/whirlybird.html",
+		"/Users/cindy/Dropbox/CSSI/app-engine-2/cold-reading/templates/whirlybird_results.html",
+		"/Users/cindy/Dropbox/CSSI/app-engine-2/cold-reading/templates/fortunecookie.html",
+		"/Users/cindy/Sites/to-do-front/css/scss/components/_icons.scss",
+		"/Users/cindy/Sites/to-do-front/css/scss/main.scss",
+		"/Users/cindy/Sites/to-do-front/login.php",
+		"/Users/cindy/Sites/to-do-front/register.php",
+		"/Users/cindy/Sites/to-do-front/css/scss/pages/_dashboard.scss",
+		"/Users/cindy/Downloads/fontello-feed8ad8/css/icons.css",
+		"/Users/cindy/Sites/to-do-front/css/scss/components/_forms.scss",
+		"/Users/cindy/Sites/to-do-front/css/scss/pages/_account.scss",
+		"/Users/cindy/Sites/to-do-front/css/main.css",
+		"/Users/cindy/Sites/to-do-front/css/scss/helpers/_variables.scss",
+		"/Users/cindy/Sites/to-do-front/css/scss/base/_typography.scss",
+		"/Users/cindy/Downloads/fontello-b08f8247/css/icons.css",
+		"/Users/cindy/Sites/to-do-front/css/scss/helpers/_mixins.scss",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/Sass.sublime-settings",
+		"/Users/cindy/Sites/to-do-front/.sass-cache/262fe4b9c92124b88f11ab57b6728d37b5498133/_normalize.scssc",
+		"/Users/cindy/Sites/to-do-front/.sass-cache/df8038ad32fbc081136db5d45786c7f8406abacb/_account.scssc",
+		"/Users/cindy/Sites/to-do-front/index.php",
+		"/Users/cindy/Dropbox/CSSI/python-1/challenges.py",
+		"/Users/cindy/Desktop/triangle.py",
+		"/Users/cindy/Sites/nub/css/scss/base/_normalize.scss",
+		"/Users/cindy/Sites/nub/css/scss/main.scss",
+		"/Users/cindy/Sites/mission-revision/resources/app/config/database.php",
+		"/Users/cindy/Sites/edoloh/connect.php",
+		"/Users/cindy/Sites/to-do/resources/untitled.php",
+		"/Users/cindy/Sites/to-do/resources/connect.php",
+		"/Users/cindy/Sites/to-do/public_html/login.php",
+		"/Users/cindy/Sites/tournament/tt/app/config/database.php",
+		"/Users/cindy/Sites/to-do/public_html/index.php",
+		"/Users/cindy/Sites/to-do/public_html/css/scss/main.scss",
+		"/Users/cindy/Sites/to-do/public_html/css/scss/base/_typography.scss",
+		"/Users/cindy/Sites/to-do/public_html/css/scss/base/_normalize.scss",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/cindy/.ssh/id_rsa.pub",
+		"/Users/cindy/Sites/TeacherGraph/contact.php",
+		"/Users/cindy/Sites/TeacherGraph/pricing.php",
+		"/Users/cindy/Sites/TeacherGraph/howitworks.php",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/pages/_works.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/base.scss",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-index.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-ourprograms.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-howtohelp.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-whoweare.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-gethelp.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-footer.php",
+		"/Users/cindy/Documents/Development/Python/ex15.py",
+		"/Users/cindy/Documents/Development/Python/ex14.py",
+		"/Users/cindy/Documents/Development/Python/ex15_sample.txt",
+		"/Users/cindy/Documents/Development/Python/ex13.py",
+		"/Users/cindy/Documents/Development/Python/ex11.py",
+		"/Users/cindy/Documents/Development/Python/ex12.py",
+		"/Users/cindy/Documents/Development/Python/ex10.py",
+		"/Users/cindy/Documents/Development/Python/ex9.py",
+		"/Users/cindy/Documents/Development/Python/ex8.py",
+		"/Users/cindy/Documents/Development/Python/ex7.py",
+		"/Users/cindy/Documents/Development/Python/ex6.py",
+		"/Users/cindy/Documents/Development/Python/ex5.py",
+		"/Users/cindy/Documents/Development/Python/ex3.py",
+		"/Users/cindy/Documents/Development/Python/ex4.py",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_animations.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/layout/_media.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_icons.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_globals.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/pages/_homepage.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/layout/_footer.scss",
+		"/Users/cindy/Sites/TeacherGraph/index.php",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/layout/_header.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/layout/_generic.scss",
+		"/Users/cindy/Documents/Development/Python/ex2.py",
+		"/Users/cindy/Documents/Development/Python/ex1.py",
+		"/Users/cindy/Sites/TeacherGraph/js/vendor/stellar.js",
+		"/Users/cindy/Sites/nub/index.php",
+		"/Users/cindy/Sites/nub/css/scss/base/_reset.scss",
+		"/Users/cindy/Sites/nub/css/scss/base/_typography.scss",
+		"/Users/cindy/Downloads/foundation-essentials-5.2.3 2/index.html",
+		"/Users/cindy/Sites/nub/css/scss/main.css",
+		"/Users/cindy/Sites/nub/css/scss/pages/_home.scss",
+		"/Users/cindy/Sites/nub/css/scss/helpers/_variables.scss",
+		"/Users/cindy/Sites/nub/css/scss/helpers/_mixins.scss",
+		"/Users/cindy/Sites/nub/css/scss/layout/_grid.scss",
+		"/Users/cindy/Sites/nub/css/scss/layout/_header.scss",
+		"/Users/cindy/Sites/nub/css/scss/layout/footer.scss",
+		"/Users/cindy/Sites/nub/css/scss/layout/_media.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_footer.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_default.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/layout/_components.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/base.css",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_header.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_typography.scss",
+		"/Users/cindy/Sites/TeacherGraph/test.php",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/_grid.scss",
+		"/Users/cindy/Sites/TeacherGraph/css/_grid.scss",
+		"/Users/cindy/Sites/TeacherGraph/index.html",
+		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/HTML.sublime-settings",
+		"/Users/cindy/Sites/TeacherGraph/css/scss/default.css",
+		"/private/etc/php.ini.default",
+		"/private/etc/apache2/httpd.conf",
+		"/Users/cindy/Documents/untitled",
+		"/Users/cindy/Library/Caches/TemporaryItems/2-index.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-how.php",
+		"/Applications/MAMP/htdocs/friscotailor/about.php",
+		"/Applications/MAMP/htdocs/friscotailor/css/header.php",
+		"/Applications/MAMP/htdocs/friscotailor/location.php",
+		"/Applications/MAMP/htdocs/friscotailor/pricing.php",
+		"/Applications/MAMP/htdocs/friscotailor/css/footer.php",
+		"/Applications/MAMP/htdocs/friscotailor/coupons.php",
+		"/Users/cindy/Library/Caches/TemporaryItems/1-header.php",
+		"/Applications/MAMP/htdocs/newhope/ourprograms.php",
+		"/Applications/MAMP/htdocs/newhope/upcomingevents.php",
+		"/Applications/MAMP/htdocs/newhope/css/style.css",
+		"/Applications/MAMP/htdocs/newhope/css/header.php",
+		"/Applications/MAMP/htdocs/newhope/index.php",
+		"/Applications/MAMP/htdocs/newhope/css/footer.php",
+		"/Applications/MAMP/htdocs/newhope/gethelp.php",
+		"/Applications/MAMP/htdocs/newhope/whoweare.php",
+		"/Applications/MAMP/htdocs/newhope/howtohelp.php",
+		"/Applications/MAMP/htdocs/newhope/pit.php"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"editted",
+			"theme",
+			"show",
+			"hide",
+			";",
+			"red",
+			"class=\"",
+			"id",
+			"75",
+			"50",
+			"font",
+			"mail",
+			"header",
+			"div",
+			"font",
+			"account",
+			"\n								<h1>$5</h1>",
+			"col--1-of-3",
+			"red",
+			"60%, 70%",
+			"55%, 65%,",
+			"50%, 60%",
+			"45%, 55%,",
+			"40%, 50%,",
+			"45%, 55",
+			"35%, 55%",
+			"100%",
+			"dotFour",
+			"HOPE",
+			">\n",
+			"background-url",
+			"h4",
+			"col--1",
+			"header",
+			"container",
+			"zend",
+			"no-debug",
+			"display_err",
+			"allowo",
+			" class=\"menuu\">",
+			" class=\"content\">",
+			"value()",
+			"form",
+			"programlist",
+			"footer",
+			"form",
+			"margin: 0 0 .5em 0;\n",
+			"upcoming_events",
+			"fourth",
+			"Jacques Francois",
+			"Jacque Francois",
+			"Jacques+Francois",
+			"Quattrocento",
+			"Lekton",
+			"Open Sans",
+			"form",
+			"\"",
+			"#00CCE4",
+			"fancybox-close",
+			"10px",
+			"a {",
+			"fancybox-close",
+			"family",
+			"guess",
+			"qualify",
+			"<div>",
+			"portal",
+			"portal.gi",
+			"portal.go",
+			"request",
+			"input[type=text",
+			"form",
+			"img.av",
+			"upload avatar",
+			"upload vatar",
+			"view ",
+			"avatar",
+			"portfolio",
+			"non-profit",
+			"portfolio",
+			"update",
+			"input[type=",
+			"button",
+			"content",
+			"#F5F5F5",
+			"/css",
+			"bac",
+			"plate.pn",
+			"/css",
+			"/css/im",
+			".row ",
+			"css",
+			"eight",
+			"jeli",
+			"jelira",
+			"\"/",
+			"change",
+			"/skins",
+			"header",
+			"form",
+			"\"css",
+			"required",
+			"muli",
+			"Mission Revision",
+			"compeition",
+			"D3EDAD",
+			"<br /><a class=\"downloadlink\"",
+			"<a class=\"downloadlink\"",
+			"parallax",
+			".parallax",
+			"muli",
+			"#C4D2DF",
+			"nav[data-tuktuk=\"menu\"]",
+			"body nav[data-tuktuk=\"menu\"]",
+			"body nav[data-tuktuk=\"menu\"] > a:hover",
+			"1abc9c",
+			"a:hover",
+			"#19BC9C",
+			":hover",
+			"return view::",
+			"		\n",
+			"Admin",
+			"Insert",
+			">",
+			"#F4DE79",
+			"f1d866",
+			"1em",
+			"2em"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"background-image",
+			">",
+			"val()",
+			"Source Sans Pro",
+			"Jacques Francois",
+			"Jacque Francois",
+			"Jacques+Francois",
+			"Cutive Mono",
+			"Quattrocento",
+			"Lekton",
+			"'",
+			"<div class=\"faq\">",
+			"#fff",
+			"css",
+			"im",
+			"five",
+			"four",
+			"\"",
+			"skins",
+			"\"../css",
+			"Ubuntu",
+			"TAMS Tournament",
+			"competition",
+			"<br /><br /><a class=\"downloadlink\"",
+			"<br /><a class=\"downloadlink\"",
+			"Ubuntu",
+			"9EDBD0",
+			"School",
+			"Input",
+			"images",
+			"categories",
+			".joblisting",
+			"#joblistings",
+			".joblisting",
+			"#joblistings",
+			"h4",
+			"fonts/",
+			"/mr/images/",
+			"/images/",
+			"h3",
+			"<div class=\"col-lg-3 categories",
+			"toggleshow",
+			"<br /><h2>",
+			"</h2><br />",
+			"</h2><br /><br />",
+			"Casper-WebFont",
+			"<?php bloginfo('template_url'); ?>/images",
+			"body#homepage div#content",
+			"cell10",
+			"cell9",
+			"cell8",
+			"cell7",
+			"cell6",
+			"cell5",
+			"cell4",
+			"cell3",
+			"cell2",
+			"div"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "bites-without-borders.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"lo",
+				"login.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
