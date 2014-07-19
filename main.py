@@ -34,9 +34,12 @@ dbUser = User.query().filter(User.user_id == userID).fetch(1)
 
 header_values = {
   'logout_url' : users.create_logout_url('/'),
-  'name' : name, 
-  #'user_recipes_url' : '/recipes/by/' + str(dbUser[0].user_id)
+  'name' : name
 }
+
+if dbUser[0] :
+  header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
+
 homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
 recipe_header = jinja_environment.get_template('templates/recipes_header.html').render({'name' : name})
 
@@ -96,7 +99,12 @@ class ViewIndividualRecipe(webapp2.RequestHandler):
       error = "That recipe was not found."
       template_values = { 'error' : error }
     else : 
-      template_values = { 'recipe' : recipe } 
+      # check if this recipe belongs to user
+      if recipe.author == userID :
+        isOwner = True
+      else :
+        isOwner = False
+      template_values = { 'recipe' : recipe, 'isOwner' : isOwner } 
     IndividualRecipe = jinja_environment.get_template('templates/recipes_individual.html').render(template_values)
     self.response.write(IndividualRecipe)
 

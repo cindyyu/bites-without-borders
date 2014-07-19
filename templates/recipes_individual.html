@@ -3,6 +3,10 @@
 <h2>oh no</h2>
 	{{ error }}
 {% else %}
+{% if isOwner %}
+	<a href="{{ recipe.deleteUrl() }}">delete recipe</a>
+	<a href="{{ recipe.editUrl() }}">edit recipe</a>
+{% endif %}
 <h2>{{ recipe.name }}</h2>
 <p>posted by {{ recipe.author }}</p>
 <p>posted from {{ recipe.location }}</p>

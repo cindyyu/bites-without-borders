@@ -13,7 +13,9 @@
         var ingredients = []
         $("input.ingredient").each(
           function() {
-            ingredients[ingredients.length] = $(this).val();
+            if ( $(this).val() != '' ) {
+              ingredients[ingredients.length] = $(this).val();
+            }
           }
         );
         // creates a string that we'll decode in python 
@@ -46,7 +48,7 @@
 		{{ error }}
 	{% else %}
     {% if success %}
-      yay editted!
+      yay editted! <a href="{{ recipe.viewUrl() }}">view recipe here</a>
     {% endif %}
 		<h2>edit recipe</h2>
 	    <form action="/recipes/editted" method="post">
