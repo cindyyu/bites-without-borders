@@ -2,6 +2,8 @@
 <p>hello {{ name }} / <a href="{{ logout_url }}">logout</a></p>
 <p>
   <a href="/recipes/new">add new recipes</a>
-  <a href="{{ user_recipes_url }}">view your recipes</a>
+  {% if user_recipes_url %}
+  	<a href="{{ user_recipes_url }}">view your recipes</a>
+  {% endif %}
   <a href="/recipes/all">view all recipes</a>
 </p>

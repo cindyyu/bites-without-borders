@@ -34,9 +34,11 @@ dbUser = User.query().filter(User.user_id == userID).fetch(1)
 
 header_values = {
   'logout_url' : users.create_logout_url('/'),
-  'name' : name, 
-  'user_recipes_url' : '/recipes/by/' + str(dbUser[0].user_id)
+  'name' : name
 }
+
+if dbUser :
+  header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
 
 homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
 recipe_header = jinja_environment.get_template('templates/recipes_header.html').render({'name' : name})
@@ -49,7 +51,7 @@ class HomeHandler(webapp2.RequestHandler):
       template_values = { 'name': name }
       firstTime = False
     else :
-      newUser = User(user_id=userID, name='bleh')
+      newUser = User(user_id=userID, name=user.nickname(), savedRecipes=[''])
       newUser.put()
       name = user.nickname()
       firstTime = True
@@ -200,12 +202,22 @@ class DeleteRecipe(webapp2.RequestHandler):
 class ThumbUpRecipe(webapp2.RequestHandler):
   def post(self):
     data = json.loads(self.request.body)
-    recipe = Recipe.get_by_id(int(data['recipeID']))
-    if recipe.thumbsUp == None :
-      recipe.thumbsUp = 1
-    else :
-      recipe.thumbsUp += 1
-    recipe.put()
+    recipe = Recipe.get_by_id(int( data['recipeID'] ))
+    # check if user has already saved this recipe
+    user = dbUser[0]
+    matches = 0
+    for savedRecipe in user.savedRecipes :
+      if savedRecipe == data['recipeID'] :
+        matches += 1
+        break;
+    if matches == 0 :
+      if recipe.thumbsUp == None :
+        recipe.thumbsUp = 1
+      else :
+        recipe.thumbsUp += 1
+      recipe.put()
+      user.savedRecipes.append( data['recipeID'] );
+      user.put()
     self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp})))
 
 class ThumbDownRecipe(webapp2.RequestHandler):
@@ -219,6 +231,22 @@ class ThumbDownRecipe(webapp2.RequestHandler):
     recipe.put()
     self.response.write(json.dumps(({'recipe_thumbsDown': recipe.thumbsDown})))
 
+class SavedRecipes(webapp2.RequestHandler):
+  def get(self) : 
+    if dbUser :
+      user = dbUser[0]
+      recipes = []
+      for recipe in user.savedRecipes :
+        if recipe != '' :
+          savedRecipe = Recipe.get_by_id(int(recipe))
+          if savedRecipe :
+            recipes.append(savedRecipe)
+      template_values = { 'recipes' : recipes } 
+      SavedRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
+      self.response.write(SavedRecipes)
+    else :
+      self.response.write("EH")
+
 app = webapp2.WSGIApplication([
   ('/', HomeHandler),
   ('/recipes/new', NewRecipe),
@@ -229,5 +257,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/all', ViewAllRecipes),
   ('/recipes/delete/(\d+)', DeleteRecipe),
   ('/recipes/thumbsUp', ThumbUpRecipe),
-  ('/recipes/thumbsDown', ThumbDownRecipe)
+  ('/recipes/thumbsDown', ThumbDownRecipe),
+  ('/recipes/saved', SavedRecipes)
 ], debug=True)

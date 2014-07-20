@@ -4,6 +4,7 @@ class User(ndb.Model) :
   user_id = ndb.StringProperty(required=True)
   name = ndb.StringProperty(required=True)
   location = ndb.StringProperty()
+  savedRecipes = ndb.StringProperty(repeated=True)
   def recipesUrl(self):
     return '/recipes/by/%s' % self.key.id()
 

@@ -1,6 +1,10 @@
-{% for recipe in recipes %}
-	<div>
-		<h1>{{ recipe.name }}</h1>
-		<a href="{{ recipe.viewUrl() }}">view more</a>
-	</div>
-{% endfor %}
+{% if recipes %}
+	{% for recipe in recipes %}
+		<div>
+			<h1>{{ recipe.name }}</h1>
+			<a href="{{ recipe.viewUrl() }}">view more</a>
+		</div>
+	{% endfor %}
+{% else %}
+	you haven't saved any
+{% endif %}
