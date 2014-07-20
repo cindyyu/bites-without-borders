@@ -60,26 +60,34 @@
 				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 				var styledMapOptions = {
-    			name: 'Custom Style'
+    			name: 'Recipes'
   			};
   			var customMapType = new google.maps.StyledMapType(mapStyles, styledMapOptions);
   			map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
 				var recipes = {{ recipes }};
+
 				for (i = 0; i < recipes.length; i++) {
 					commaPos = recipes[i]['latlng'].indexOf(',');
 					latitude = recipes[i]['latlng'].substring(0, commaPos);
-					longitude = recipes[i]['latlng'].substring(commaPos + 1, recipes[i]['latlng'].length)
+					longitude = recipes[i]['latlng'].substring(commaPos + 1, recipes[i]['latlng'].length);
+					var recipeInfo = '<div id="recipeInfo">' +
+						'<h3>' + recipes[i]['name'] + '</h3>' + 
+						'<p>takes ' + recipes[i]['cooktime'] + ' long to prepare' + 
+						'<a href="' + recipes[i]['recipeUrl'] + '">view more</a>' +
+						'</div>';
 					marker = new google.maps.Marker({
 			      position: new google.maps.LatLng(latitude, longitude),
 			      map: map,
-			      html: recipes[i]['name']
-		    	});
-		    	var infowindow = new google.maps.InfoWindow({
-   					content: recipes[i]['name'] + "<br />HI"
-  				});
-				}
+			      infowindow: new google.maps.InfoWindow({content: recipeInfo, maxWidth: 500})
+  				})
 
+					google.maps.event.addListener(
+						marker, 'click', function() {
+							this.infowindow.open(map, this);
+						}
+					);
+				}
     	}
     	google.maps.event.addDomListener(window, 'load', initialize);
     </script>

@@ -49,7 +49,14 @@ class HomeHandler(webapp2.RequestHandler):
     rawRecipes = Recipe.query().fetch()
     recipes = []
     for rawRecipe in rawRecipes : 
-      recipes.append({'name': rawRecipe.name, 'latlng': str(rawRecipe.location), 'location': rawRecipe.location_name, 'cooktime': rawRecipe.cooktime, 'ingredients': json.dumps(rawRecipe.ingredients) })
+      recipes.append({
+        'name': rawRecipe.name, 
+        'latlng': str(rawRecipe.location), 
+        'location': rawRecipe.location_name, 
+        'cooktime': rawRecipe.cooktime, 
+        'ingredients': json.dumps(rawRecipe.ingredients),
+        'recipeUrl' : rawRecipe.viewUrl()
+      })
     if dbUser : 
       name = dbUser[0].name
       template_values = { 'name': name }
