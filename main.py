@@ -37,7 +37,7 @@ header_values = {
   'name' : name
 }
 
-if dbUser[0] :
+if dbUser :
   header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
 
 homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
@@ -51,7 +51,7 @@ class HomeHandler(webapp2.RequestHandler):
       template_values = { 'name': name }
       firstTime = False
     else :
-      newUser = User(user_id=userID, name=user.nickname())
+      newUser = User(user_id=userID, name='bleh')
       newUser.put()
       name = user.nickname()
       firstTime = True
@@ -118,7 +118,7 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'recipes' : recipes }
+        template_values = { 'recipes' : recipes, 'author' : author[0].name }
       else : 
         error = "This user has not uploaded any recipes."
         template_values = { 'error' : error }

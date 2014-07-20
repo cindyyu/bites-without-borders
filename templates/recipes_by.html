@@ -1,7 +1,7 @@
 {% if error %}
 	{{ error }}
 {% else %}
-<h1>recipes by {{ recipes[0].author }}</h1>
+<h1>recipes by {{ author }}</h1>
 
 {% for recipe in recipes %}
 	<b>recipe name</b> {{ recipe.name }}

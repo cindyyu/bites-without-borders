@@ -4,6 +4,8 @@ runtime: python27
 api_version: 1
 threadsafe: yes
 
+default_expiration: "0d 0h 5m"
+
 builtins: 
 - remote_api: on
 
@@ -13,6 +15,8 @@ handlers:
   upload: favicon\.ico
 - url: /images
   static_dir: static_files/images
+- url: /js
+  static_dir: static_files/js
 - url: /css
   static_dir: static_files/css
 - url: .*
