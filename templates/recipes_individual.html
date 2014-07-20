@@ -7,12 +7,32 @@
       	$.ajax(
       		{
       			type: "POST", 
-      			url: "/recipe/thumbsUp",
+      			url: "/recipes/thumbsUp",
       			dataType: 'json', 
-      			data: JSON.stringify({ 'recipeID': recipeID })
+      			data: JSON.stringify({ "recipeID": recipeID })
+      		}
+      	)
+      	.done(
+      		function(data) {
+      			$(".thumbsUpCount").text(data['recipe_thumbsUp']);
       		}
       	);
-      }
+      };
+      var thumbsDown = function(recipeID) {
+      	$.ajax(
+      		{
+      			type: "POST", 
+      			url: "/recipes/thumbsDown",
+      			dataType: 'json', 
+      			data: JSON.stringify({ "recipeID": recipeID })
+      		}
+      	)
+      	.done(
+      		function(data) {
+      			$(".thumbsDownCount").text(data['recipe_thumbsDown']);
+      		}
+      	);
+      };
     </script>
    </head>
   <body>
@@ -38,7 +58,8 @@
 		</ul>
 		<h2>instructions</h2>
 		{{ recipe.instructions }}<br /><br />
-		<a href="javascript:thumbsUp('{{recipe.key.id()}}');">thumb up</a> {{ recipe.thumbsUp }}
+		<a href="javascript:thumbsUp('{{recipe.key.id()}}');">thumb up</a> <span class="thumbsUpCount">{{ recipe.thumbsUp }}</span>
+		<a href="javascript:thumbsDown('{{recipe.key.id()}}');">thumb down</a> <span class="thumbsDownCount">{{ recipe.thumbsDown }}</span>
 		{% endif %} 
   </body>
 </html>

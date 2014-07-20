@@ -199,6 +199,28 @@ class DeleteRecipe(webapp2.RequestHandler):
     DeleteRecipePage = jinja_environment.get_template('templates/recipes_delete.html').render(template_values)
     self.response.write(DeleteRecipePage)
 
+class ThumbUpRecipe(webapp2.RequestHandler):
+  def post(self):
+    data = json.loads(self.request.body)
+    recipe = Recipe.get_by_id(int(data['recipeID']))
+    if recipe.thumbsUp == None :
+      recipe.thumbsUp = 1
+    else :
+      recipe.thumbsUp += 1
+    recipe.put()
+    self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp})))
+
+class ThumbDownRecipe(webapp2.RequestHandler):
+  def post(self):
+    data = json.loads(self.request.body)
+    recipe = Recipe.get_by_id(int(data['recipeID']))
+    if recipe.thumbsDown == None :
+      recipe.thumbsDown = 1
+    else :
+      recipe.thumbsDown += 1
+    recipe.put()
+    self.response.write(json.dumps(({'recipe_thumbsDown': recipe.thumbsDown})))
+
 app = webapp2.WSGIApplication([
   ('/', HomeHandler),
   ('/recipes/new', NewRecipe),
@@ -207,5 +229,7 @@ app = webapp2.WSGIApplication([
   ('/recipes/edit/(\d+)', EditRecipePage), 
   ('/recipes/editted', EdittedRecipe),
   ('/recipes/all', ViewAllRecipes),
-  ('/recipes/delete/(\d+)', DeleteRecipe)
+  ('/recipes/delete/(\d+)', DeleteRecipe),
+  ('/recipes/thumbsUp', ThumbUpRecipe),
+  ('/recipes/thumbsDown', ThumbDownRecipe)
 ], debug=True)
