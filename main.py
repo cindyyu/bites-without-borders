@@ -46,6 +46,10 @@ recipe_header = jinja_environment.get_template('templates/recipes_header.html').
 class HomeHandler(webapp2.RequestHandler):
   def get(self):
     # check if user is already in database
+    rawRecipes = Recipe.query().fetch()
+    recipes = []
+    for rawRecipe in rawRecipes : 
+      recipes.append({'name': rawRecipe.name, 'latlng': str(rawRecipe.location), 'location': rawRecipe.location_name, 'cooktime': rawRecipe.cooktime, 'ingredients': json.dumps(rawRecipe.ingredients) })
     if dbUser : 
       name = dbUser[0].name
       template_values = { 'name': name }
@@ -55,7 +59,7 @@ class HomeHandler(webapp2.RequestHandler):
       newUser.put()
       name = user.nickname()
       firstTime = True
-    template_values = { 'header': homepage_header, 'logout_url': users.create_logout_url('/'), 'first_time': firstTime }
+    template_values = { 'recipes': json.dumps(recipes), 'header': homepage_header, 'logout_url': users.create_logout_url('/'), 'first_time': firstTime }
     Homepage = jinja_environment.get_template('templates/homepage.html').render(template_values)
     self.response.write(Homepage)
 
