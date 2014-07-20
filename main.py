@@ -35,7 +35,7 @@ dbUser = User.query().filter(User.user_id == userID).fetch(1)
 header_values = {
   'logout_url' : users.create_logout_url('/'),
   'name' : name, 
-  'user_recipes_url' : '/recipes/by/' + str(dbUser[0].user_id
+  'user_recipes_url' : '/recipes/by/' + str(dbUser[0].user_id)
 }
 
 homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
