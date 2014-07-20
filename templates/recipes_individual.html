@@ -1,23 +1,45 @@
-{{ header }}
-{% if error %}
-<h2>oh no</h2>
-	{{ error }}
-{% else %}
-{% if isOwner %}
-	<a href="{{ recipe.deleteUrl() }}">delete recipe</a>
-	<a href="{{ recipe.editUrl() }}">edit recipe</a>
-{% endif %}
-<h2>{{ recipe.name }}</h2>
-<p>posted by {{ recipe.author }}</p>
-<p>posted from {{ recipe.location }}</p>
-<p>serves {{ recipe.servings }}</p>
-<p>it takes {{ recipe.cooktime }} to cook</p>
-<p>it requires the following ingredients</p>
-<ul>
-	{% for ingredient in recipe.ingredients %}
-		<li>{{ ingredient }}</li>
-	{% endfor %}
-</ul>
-<h2>instructions</h2>
-{{ recipe.instructions }}
-{% endif %}
+<!DOCTYPE html>
+<html>
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      var thumbsUp = function(recipeID) {
+      	$.ajax(
+      		{
+      			type: "POST", 
+      			url: "/recipe/thumbsUp",
+      			dataType: 'json', 
+      			data: JSON.stringify({ 'recipeID': recipeID })
+      		}
+      	);
+      }
+    </script>
+   </head>
+  <body>
+  	{{ header }}
+		{% if error %}
+		<h2>oh no</h2>
+			{{ error }}
+		{% else %}
+		{% if isOwner %}
+			<a href="{{ recipe.deleteUrl() }}">delete recipe</a>
+			<a href="{{ recipe.editUrl() }}">edit recipe</a>
+		{% endif %}
+		<h2>{{ recipe.name }}</h2>
+		<p>posted by {{ recipe.author }}</p>
+		<p>posted from {{ recipe.location_name }}</p>
+		<p>serves {{ recipe.servings }}</p>
+		<p>it takes {{ recipe.cooktime }} to cook</p>
+		<p>it requires the following ingredients</p>
+		<ul>
+			{% for ingredient in recipe.ingredients %}
+				<li>{{ ingredient }}</li>
+			{% endfor %}
+		</ul>
+		<h2>instructions</h2>
+		{{ recipe.instructions }}<br /><br />
+		<a href="javascript:thumbsUp('{{recipe.key.id()}}');">thumb up</a> {{ recipe.thumbsUp }}
+		{% endif %} 
+  </body>
+</html>
+		

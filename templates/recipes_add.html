@@ -2,7 +2,8 @@
 <html>
   <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfoJeJmD19uB8JZ-kfvJoKp5rxyRy7VOo"></script>
+
     <script>
       var geocoder;
       var addNewIngredient = function() {
@@ -39,12 +40,14 @@
         var location = $("#location").val();
         geocoder.geocode( { 'address': location}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
+            calculatedLatLng = results[0].geometry.location;
             $("input#latlng").val( results[0].geometry.location );
+            $("form").submit();
           } else {
             alert('Geocode was not successful for the following reason: ' + status);
           }
         });
-        $("form").submit();
+
       }
       $(document).ready(
         function() {
@@ -69,7 +72,7 @@
       <input type="hidden" name="author" value="{{ userID }}" /><br />
       <label for="location">Location</label><br />
       <input type="hidden" name="location" id="latlng" />
-      <input type="text" id="location" /><br />
+      <input type="text" name="location_name" id="location" /><br />
       <label for="ingredients">Ingredients</label><br />
       <div id="ingredientcontainer">
         <input type="text" class="ingredient" /><br />

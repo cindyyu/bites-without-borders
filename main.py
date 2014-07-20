@@ -68,14 +68,13 @@ class NewRecipe(webapp2.RequestHandler):
   def post(self):
     # handles recipe submissions
     import re
-    GeoPt(re.sub("[()]", "", self.request.get('location')))
-    self.request.get('location')
     recipe_added = {
       'name' : self.request.get('name'),
       'cook_time' : self.request.get('cooktime'),
       'instructions' : self.request.get('instructions'),
       'servings' : int(self.request.get('servings')), 
       'author' : self.request.get('author'), 
+      'location_name' : self.request.get('location_name'),
       'location' : GeoPt(re.sub("[()]", "", self.request.get('location'))),
       'ingredients' : json.loads(str(self.request.get('ingredients')))
     }
@@ -86,6 +85,7 @@ class NewRecipe(webapp2.RequestHandler):
       servings=recipe_added['servings'],
       author=recipe_added['author'],
       location=recipe_added['location'],
+      location_name=recipe_added['location_name'],
       ingredients=recipe_added['ingredients']
     )
     newRecipe.put()
@@ -148,6 +148,7 @@ class EditRecipePage(webapp2.RequestHandler):
 
 class EdittedRecipe(webapp2.RequestHandler):
   def post(self): 
+    import re
     # fetch new values
     recipe_editted = {
       'id' : self.request.get('recipe_id'),
@@ -156,7 +157,8 @@ class EdittedRecipe(webapp2.RequestHandler):
       'instructions' : self.request.get('instructions'),
       'servings' : int(self.request.get('servings')), 
       'author' : self.request.get('author'), 
-      'location' : GeoPt(self.request.get('location')),
+      'location' : GeoPt(re.sub("[()]", "", self.request.get('location'))),
+      'location_name' : self.request.get('location_name'),
       'ingredients' : json.loads(str(self.request.get('ingredients')))
     }
     # fetch recipe model corresponding to the recipe we wanna edit
@@ -166,6 +168,7 @@ class EdittedRecipe(webapp2.RequestHandler):
     recipe_to_edit.instructions = recipe_editted['instructions']
     recipe_to_edit.servings = recipe_editted['servings']
     recipe_to_edit.location = recipe_editted['location']
+    recipe_to_edit.location_name = recipe_editted['location_name']
     recipe_to_edit.ingredients = recipe_editted['ingredients']
     recipe_to_edit.put()
     self.redirect(recipe_to_edit.editUrlSuccess())

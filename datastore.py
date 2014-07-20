@@ -14,9 +14,10 @@ class Recipe(ndb.Model) :
   servings = ndb.IntegerProperty()
   author = ndb.StringProperty()
   location = ndb.GeoPtProperty()
+  location_name = ndb.StringProperty()
   ingredients = ndb.StringProperty(repeated=True) 
-  thumbsUp = ndb.IntegerProperty()
-  thumbsDown = ndb.IntegerProperty()
+  thumbsUp = ndb.IntegerProperty(default=0)
+  thumbsDown = ndb.IntegerProperty(default=0)
   def deleteUrl(self):
     return '/recipes/delete/%s' % self.key.id()
   def viewUrl(self):
