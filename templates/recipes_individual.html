@@ -45,6 +45,9 @@
 			<a href="{{ recipe.deleteUrl() }}">delete recipe</a>
 			<a href="{{ recipe.editUrl() }}">edit recipe</a>
 		{% endif %}
+    {% if recipe.image %}
+      <img src="{{ recipe.imageUrl() }}" alt="{{ recipe.name }}" />
+    {% endif %}
 		<h2>{{ recipe.name }}</h2>
 		<p>posted by {{ recipe.author }}</p>
 		<p>posted from {{ recipe.location_name }}</p>

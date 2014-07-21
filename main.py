@@ -15,9 +15,11 @@
 # limitations under the License.
 #
 from google.appengine.api import users
+from google.appengine.ext import ndb 
 from google.appengine.api.datastore_types import GeoPt
 from datastore import User
 from datastore import Recipe
+
 
 import webapp2
 import os 
@@ -81,6 +83,7 @@ class NewRecipe(webapp2.RequestHandler):
     import re
     recipe_added = {
       'name' : self.request.get('name'),
+      'image' : self.request.get('img'),
       'cook_time' : self.request.get('cooktime'),
       'instructions' : self.request.get('instructions'),
       'servings' : int(self.request.get('servings')), 
@@ -92,6 +95,7 @@ class NewRecipe(webapp2.RequestHandler):
     newRecipe = Recipe(
       name=recipe_added['name'],
       cooktime=recipe_added['cook_time'],
+      image=recipe_added['image'],
       instructions=recipe_added['instructions'],
       servings=recipe_added['servings'],
       author=recipe_added['author'],
@@ -166,6 +170,7 @@ class EdittedRecipe(webapp2.RequestHandler):
       'name' : self.request.get('name'),
       'cook_time' : self.request.get('cooktime'),
       'instructions' : self.request.get('instructions'),
+      'image' : self.request.get('img'),
       'servings' : int(self.request.get('servings')), 
       'author' : self.request.get('author'), 
       'location' : GeoPt(re.sub("[()]", "", self.request.get('location'))),
@@ -176,6 +181,7 @@ class EdittedRecipe(webapp2.RequestHandler):
     recipe_to_edit = Recipe.get_by_id(int(recipe_editted['id']))
     recipe_to_edit.name = recipe_editted['name']
     recipe_to_edit.cooktime = recipe_editted['cook_time']
+    recipe_to_edit.image = recipe_editted['image']
     recipe_to_edit.instructions = recipe_editted['instructions']
     recipe_to_edit.servings = recipe_editted['servings']
     recipe_to_edit.location = recipe_editted['location']
@@ -258,6 +264,13 @@ class SavedRecipes(webapp2.RequestHandler):
     else :
       self.response.write("EH")
 
+class Image(webapp2.RequestHandler):
+  def get(self) : 
+    image_id = self.request.get('id')
+    image = Recipe.get_by_id(int(image_id)).image
+    self.response.headers['Content-Type'] = 'image/png'
+    self.response.write(image)
+
 app = webapp2.WSGIApplication([
   ('/', HomeHandler),
   ('/recipes/new', NewRecipe),
@@ -269,5 +282,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/delete/(\d+)', DeleteRecipe),
   ('/recipes/thumbsUp', ThumbUpRecipe),
   ('/recipes/thumbsDown', ThumbDownRecipe),
-  ('/recipes/saved', SavedRecipes)
+  ('/recipes/saved', SavedRecipes),
+  ('/images', Image)
 ], debug=True)

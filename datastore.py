@@ -14,11 +14,14 @@ class Recipe(ndb.Model) :
   instructions = ndb.TextProperty()
   servings = ndb.IntegerProperty()
   author = ndb.StringProperty()
+  image = ndb.BlobProperty()
   location = ndb.GeoPtProperty()
   location_name = ndb.StringProperty()
   ingredients = ndb.StringProperty(repeated=True) 
   thumbsUp = ndb.IntegerProperty(default=0)
   thumbsDown = ndb.IntegerProperty(default=0)
+  def imageUrl(self):
+    return '/images?id=%s' % self.key.id()
   def deleteUrl(self):
     return '/recipes/delete/%s' % self.key.id()
   def viewUrl(self):
