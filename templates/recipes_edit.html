@@ -87,7 +87,9 @@
 	      </div><br />
 	      <a id="newRow" href="#">add new ingredient</a><br />
 	      <input type="hidden" name="ingredients" id="allIngredients" />
-        <img src="{{ recipe.imageUrl() }}" alt="current recipe image" />
+        {% if recipe.image %}
+          <img src="{{ recipe.imageUrl() }}" alt="current recipe image" />
+        {% endif %}
         <label for="img">Upload a Photo</label>
         <input type="file" name="img"/>
 	      <input type="submit" value="submit" />
