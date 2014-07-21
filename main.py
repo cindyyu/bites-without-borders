@@ -66,15 +66,27 @@ class HomeHandler(webapp2.RequestHandler):
     rawRecipes = Recipe.query().fetch()
     recipes = []
     for rawRecipe in rawRecipes : 
-      recipes.append({
-        'name': rawRecipe.name, 
-        'latlng': str(rawRecipe.location), 
-        'location': rawRecipe.location_name, 
-        'cooktime': rawRecipe.cooktime, 
-        'ingredients': json.dumps(rawRecipe.ingredients),
-        'recipeUrl' : rawRecipe.viewUrl()
-      })
-
+      if rawRecipe.image :
+        recipes.append({
+          'name': rawRecipe.name, 
+          'latlng': str(rawRecipe.location), 
+          'location': rawRecipe.location_name, 
+          'cooktime': rawRecipe.cooktime, 
+          'image': '<img src="' + rawRecipe.imageUrl() + '" alt="" />',
+          'servings': rawRecipe.servings, 
+          'ingredients': json.dumps(rawRecipe.ingredients),
+          'recipeUrl' : rawRecipe.viewUrl()
+        })
+      else :
+        recipes.append({
+          'name': rawRecipe.name, 
+          'latlng': str(rawRecipe.location), 
+          'location': rawRecipe.location_name, 
+          'cooktime': rawRecipe.cooktime, 
+          'servings': rawRecipe.servings, 
+          'ingredients': json.dumps(rawRecipe.ingredients),
+          'recipeUrl' : rawRecipe.viewUrl()
+        })    
     user = users.get_current_user()
     name = user.nickname()
     userID = user.user_id()
@@ -182,6 +194,7 @@ class EditRecipePage(webapp2.RequestHandler):
     else : 
       error = "that doesn't exist, yo"
       template_values = { 'error' : error } 
+    template_values['header'] = GetHeader('recipe')
     EditRecipePage = jinja_environment.get_template('templates/recipes_edit.html').render(template_values)
     self.response.write(EditRecipePage)
 

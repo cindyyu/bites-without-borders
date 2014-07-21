@@ -1072,14 +1072,45 @@ div.status.success a {
   font-weight: 700;
   margin: 7px 2%;
   padding: 10px 10%;
+  position: relative;
+  text-align: left;
   text-decoration: none;
   text-transform: uppercase;
   width: 76%;
 }
-/* line 47, scss/pages/_home.scss */
+/* line 49, scss/pages/_home.scss */
+#homepage nav a [class^='icon'] {
+  color: #e2da99;
+  font-size: 1.25em;
+  position: absolute;
+  right: 10%;
+  top: 8px;
+}
+/* line 56, scss/pages/_home.scss */
 #homepage nav a:hover {
-  background: #73afb6;
+  background: #5e9ca0;
   color: white;
+}
+/* line 59, scss/pages/_home.scss */
+#homepage nav a:hover [class^='icon'] {
+  color: #e2da99;
+}
+
+/* line 66, scss/pages/_home.scss */
+#recipeInfo {
+  width: 250px;
+  height: 200px;
+}
+/* line 69, scss/pages/_home.scss */
+#recipeInfo img {
+  display: block;
+  margin: 10px auto;
+  height: 100px;
+  width: auto;
+}
+/* line 75, scss/pages/_home.scss */
+#recipeInfo h3 {
+  margin: 0;
 }
 
 /* line 1, scss/pages/_recipes_individual.scss */
@@ -1127,18 +1158,22 @@ a.owner_controls [class^='icon'] {
 }
 
 /* line 35, scss/pages/_recipes_individual.scss */
-ul {
+ul, ol {
   margin-left: 0;
   padding: 0;
 }
 
 /* line 39, scss/pages/_recipes_individual.scss */
-ul li {
-  list-style-type: circle;
+ol li, ul li {
   margin-left: 20px;
 }
 
-/* line 44, scss/pages/_recipes_individual.scss */
+/* line 42, scss/pages/_recipes_individual.scss */
+ul li {
+  list-style-type: circle;
+}
+
+/* line 46, scss/pages/_recipes_individual.scss */
 section.grid:last-child {
   padding-bottom: 75px;
 }
@@ -1149,6 +1184,10 @@ section.grid:last-child {
   padding: 25px 0;
 }
 /* line 6, scss/pages/_recipes_forms.scss */
+.forms a {
+  color: #5e9ca0;
+}
+/* line 9, scss/pages/_recipes_forms.scss */
 .forms fieldset {
   width: 46%;
   padding: 2%;
@@ -1157,15 +1196,26 @@ section.grid:last-child {
   display: inline-block;
   vertical-align: top;
 }
-/* line 13, scss/pages/_recipes_forms.scss */
+/* line 16, scss/pages/_recipes_forms.scss */
 .forms fieldset label {
   padding-right: 1%;
   text-align: right;
 }
-/* line 17, scss/pages/_recipes_forms.scss */
+/* line 20, scss/pages/_recipes_forms.scss */
 .forms fieldset input[type='text'] {
   background: 0;
   border: 0;
   border-bottom: 1px solid #d6d6d6;
   width: 100%;
+}
+/* line 26, scss/pages/_recipes_forms.scss */
+.forms fieldset input[type='submit'] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #73afb6;
+  border: 0;
+  color: white;
+  float: right;
+  padding: 5px 10px;
 }

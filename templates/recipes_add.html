@@ -116,15 +116,18 @@
                 </li>
               </ol>
               <a id="addNewInstruction" href="#">add step</a>
+            </fieldset><fieldset>
+              <label for="instructions">Upload a Photo</label>
+              <input type="file" name="img"/>
+            </fieldset><fieldset>
+              <input type="submit" value="submit" />
             </fieldset>
           
             <input type="hidden" name="author" value="{{ userID }}" /><br />
             <input type="hidden" name="location" id="latlng" />
             <input type="hidden" name="ingredients" id="allIngredients" />
             <input type="hidden" name="instructions" id="allInstructions" />
-            <label for="img">Upload a Photo</label>
-            <input type="file" name="img"/>
-            <input type="submit" value="submit" />
+            
           </form>
         </div>
       </section>

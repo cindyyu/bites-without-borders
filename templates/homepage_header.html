@@ -7,11 +7,23 @@
 	  Welcome back, <b>{{ name }}</b>!
 	{% endif %}	
 	<nav>
-	  <a href="/recipes/new">new recipe</a>
+	  <a href="/recipes/new">
+	  	new recipe
+	  	<span class="icon-new"></span>
+	  </a>
 	  {% if user_recipes_url %}
-	  	<a href="{{ user_recipes_url }}">your recipes</a>
+	  	<a href="{{ user_recipes_url }}">
+	  		your recipes
+	  		<span class="icon-author"></span>
+	  	</a>
 	  {% endif %}
-	  <a href="/recipes/saved">saved recipes</a>
-	  <a href="/recipes/all">all recipes</a>
+	  <a href="/recipes/saved">
+	  	saved recipes
+	  	<span class="icon-saved"></span>
+	  </a>
+	  <a href="/recipes/all">
+	  	all recipes
+	  	<span class="icon-view-all"></span>
+	  </a>
 	</nav>
 </div>

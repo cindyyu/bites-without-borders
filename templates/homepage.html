@@ -78,9 +78,9 @@
 					latitude = recipes[i]['latlng'].substring(0, commaPos);
 					longitude = recipes[i]['latlng'].substring(commaPos + 1, recipes[i]['latlng'].length);
 					var recipeInfo = '<div id="recipeInfo">' +
-						'<h3>' + recipes[i]['name'] + '</h3>' + 
-						'<p>takes ' + recipes[i]['cooktime'] + ' long to prepare' + 
-						'<a href="' + recipes[i]['recipeUrl'] + '">view more</a>' +
+						'<h3>' + recipes[i]['name'] + ' <a href="' + recipes[i]['recipeUrl'] + '">view more</a></h3>' + recipes[i]['image'] +
+						'<span class="icon-cookingtime"></span> ' + recipes[i]['cooktime'] + ' prep<br /><span class="icon-servings"></span> Serves ' + recipes[i]['servings'] +
+						'<br /><span class="icon-location"></span>' + recipes[i]['location'] + '<br />' +
 						'</div>';
 					marker = new google.maps.Marker({
 			      position: new google.maps.LatLng(latitude, longitude),

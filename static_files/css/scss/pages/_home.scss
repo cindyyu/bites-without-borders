@@ -41,13 +41,38 @@
 			font-weight: 700;
 			margin: 7px 2%;
 			padding: 10px 10%;
+			position: relative;
+			text-align: left;
 			text-decoration: none;
 			text-transform: uppercase;
 			width: 76%;
+			[class^='icon'] {
+				color: $color-secondary;
+				font-size: 1.25em;
+				position: absolute; 
+				right: 10%;
+				top: 8px;
+			}
 			&:hover {
-				background: $color-primary-lighter;
+				background: $color-primary;
 				color: $white;
+				[class^='icon'] {
+					color: $color-secondary;
+				}
 			}
 		}
+	}
+}
+#recipeInfo {
+	width: 250px;
+	height: 200px;
+	img {
+		display: block;
+		margin: 10px auto;
+		height: 100px; 
+		width: auto;
+	}
+	h3 {
+		margin: 0;
 	}
 }
