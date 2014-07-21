@@ -1,0 +1,17 @@
+// primary site colors
+$color-dark: #2b2301;
+$color-dark-lighter: #342800;
+$color-primary: #5e9ca0;
+$color-primary-lighter: #73afb6;
+$color-secondary: #e2da99;
+
+// monochromatic
+
+$white: #fff;
+$black: #000;
+
+$grey: #969696; 
+$grey-dark: darken($grey, 5%);
+$grey-light: lighten($grey, 25%);
+$grey-super-dark: darken($grey, 20%);
+$grey-super-light: lighten($grey, 33%);

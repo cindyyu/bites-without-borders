@@ -1,0 +1,53 @@
+#homepage {
+  div#map-canvas {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 0;
+	}
+	div#sidebar {
+		@include border-radius(3px);
+		background: rgba(255, 255, 255, 0.85);
+		padding: 2.5% 2.5% 5%;
+		position: absolute;
+		top: 25px;
+		left: 5%;
+		width: 25%;
+		text-align: center;
+		z-index: 1;
+	}
+	a#logout {
+		position: absolute; 
+		bottom: 5%;
+		color: $color-primary;
+		right: 10%;
+	}
+	a img {
+		border: 0;
+		display: block;
+		margin: 0 auto;
+	}
+	nav {
+		margin-top: 25px; 
+		width: 100%;
+		a {
+			@include border-radius(3px);
+			background: #fff;
+			color: $color-dark-lighter;
+			display: block; 
+			font-size: 12px; 
+			font-weight: 700;
+			margin: 7px 2%;
+			padding: 10px 10%;
+			text-decoration: none;
+			text-transform: uppercase;
+			width: 76%;
+			&:hover {
+				background: $color-primary-lighter;
+				color: $white;
+			}
+		}
+	}
+}
