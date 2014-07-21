@@ -40,13 +40,15 @@ def UserInfo() :
   return dbUser
 
 def GetHeader(type) :
+
+  dbUser = UserInfo()
+  name = users.get_current_user().nickname()
+
   header_values = {
     'logout_url' : users.create_logout_url('/'),
     'name' : users.get_current_user().nickname()
   }
 
-  dbUser = UserInfo()
-  name = users.get_current_user().nickname()
   if dbUser :
     header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
 
@@ -83,7 +85,7 @@ class HomeHandler(webapp2.RequestHandler):
       template_values = { 'name': name }
       firstTime = False
     else :
-      newUser = User(user_id=userID, name=user.nickname(), savedRecipes=[''])
+      newUser = User(user_id=userID, name=name, savedRecipes=[''])
       newUser.put()
       name = user.nickname()
       firstTime = True
@@ -105,7 +107,7 @@ class NewRecipe(webapp2.RequestHandler):
       'name' : self.request.get('name'),
       'image' : self.request.get('img'),
       'cook_time' : self.request.get('cooktime'),
-      'instructions' : self.request.get('instructions'),
+      'instructions' : json.loads(str(self.request.get('instructions'))),
       'servings' : int(self.request.get('servings')), 
       'author' : self.request.get('author'), 
       'location_name' : self.request.get('location_name'),
@@ -115,7 +117,6 @@ class NewRecipe(webapp2.RequestHandler):
     newRecipe = Recipe(
       name=recipe_added['name'],
       cooktime=recipe_added['cook_time'],
-      image=recipe_added['image'],
       instructions=recipe_added['instructions'],
       servings=recipe_added['servings'],
       author=recipe_added['author'],
@@ -123,6 +124,8 @@ class NewRecipe(webapp2.RequestHandler):
       location_name=recipe_added['location_name'],
       ingredients=recipe_added['ingredients']
     )
+    if recipe_added['image'] :
+      newRecipe.image = recipe_added['image']
     newRecipe.put()
     template_values = { 'recipe_added': recipe_added, 'header': GetHeader('recipe'), 'userID' : UserId() }
     RecipeAddedPage = jinja_environment.get_template('templates/recipes_added.html').render(template_values)
@@ -141,7 +144,8 @@ class ViewIndividualRecipe(webapp2.RequestHandler):
         isOwner = True
       else :
         isOwner = False
-      template_values = { 'recipe' : recipe, 'isOwner' : isOwner } 
+      recipe_author_name = User.query().filter(User.user_id == recipe.author).fetch(1)[0].name
+      template_values = { 'recipe' : recipe, 'isOwner' : isOwner, 'header': GetHeader('recipe'), 'recipe_author_name': recipe_author_name } 
     IndividualRecipe = jinja_environment.get_template('templates/recipes_individual.html').render(template_values)
     self.response.write(IndividualRecipe)
 
@@ -195,13 +199,15 @@ class EdittedRecipe(webapp2.RequestHandler):
       'author' : self.request.get('author'), 
       'location' : GeoPt(re.sub("[()]", "", self.request.get('location'))),
       'location_name' : self.request.get('location_name'),
-      'ingredients' : json.loads(str(self.request.get('ingredients')))
+      'ingredients' : json.loads(str(self.request.get('ingredients'))),
+      'instructions' : json.loads(str(self.request.get('instructions')))
     }
     # fetch recipe model corresponding to the recipe we wanna edit
     recipe_to_edit = Recipe.get_by_id(int(recipe_editted['id']))
     recipe_to_edit.name = recipe_editted['name']
     recipe_to_edit.cooktime = recipe_editted['cook_time']
-    recipe_to_edit.image = recipe_editted['image']
+    if recipe_editted['image'] != '' :
+      recipe_to_edit.image = recipe_editted['image']
     recipe_to_edit.instructions = recipe_editted['instructions']
     recipe_to_edit.servings = recipe_editted['servings']
     recipe_to_edit.location = recipe_editted['location']

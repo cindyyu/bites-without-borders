@@ -1,3 +1,8 @@
+/* line 23, scss/helpers/_variables.scss */
+.bg-white {
+  background: white;
+}
+
 /* normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -473,6 +478,121 @@ body {
   font: 300 13px 'Roboto';
 }
 
+/* line 31, scss/base/_typography.scss */
+h2 {
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url("/font/icons.eot?6909850");
+  src: url("/font/icons.eot?6909850#iefix") format("embedded-opentype"), url("/font/icons.woff?6909850") format("woff"), url("/font/icons.ttf?6909850") format("truetype"), url("/font/icons.svg?6909850#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'icons';
+    src: url('../font/icons.svg?6909850#icons') format('svg');
+  }
+}
+*/
+/* line 22, scss/components/_icons.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 53, scss/components/_icons.scss */
+.icon-servings:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 54, scss/components/_icons.scss */
+.icon-cookingtime:before {
+  content: '\e801';
+}
+
+/* '' */
+/* line 55, scss/components/_icons.scss */
+.icon-thumbs-up:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 56, scss/components/_icons.scss */
+.icon-thumbs-down:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 57, scss/components/_icons.scss */
+.icon-author:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 58, scss/components/_icons.scss */
+.icon-view-all:before {
+  content: '\e805';
+}
+
+/* '' */
+/* line 59, scss/components/_icons.scss */
+.icon-saved:before {
+  content: '\e806';
+}
+
+/* '' */
+/* line 60, scss/components/_icons.scss */
+.icon-new:before {
+  content: '\e807';
+}
+
+/* '' */
+/* line 61, scss/components/_icons.scss */
+.icon-location:before {
+  content: '\e808';
+}
+
+/* '' */
+/* line 62, scss/components/_icons.scss */
+.icon-pencil:before {
+  content: '\e809';
+}
+
+/* '' */
+/* line 63, scss/components/_icons.scss */
+.icon-trash:before {
+  content: '\e80a';
+}
+
+/* '' */
 /*-----------------------------------*\
 
   $TOAST-GRID
@@ -848,10 +968,55 @@ body {
   vertical-align: middle;
 }
 
-/* line 2, scss/pages/_generic.scss */
+/* line 1, scss/pages/_generic.scss */
+.page {
+  background: url("/images/bg.jpg") no-repeat;
+  background-size: cover;
+}
+/* line 4, scss/pages/_generic.scss */
 .page header {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   padding: 25px;
+}
+/* line 8, scss/pages/_generic.scss */
+.page nav {
+  display: inline-block;
+  float: right;
+}
+/* line 11, scss/pages/_generic.scss */
+.page nav a {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #73afb6;
+  color: white;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 15px 10px;
+  padding: 15px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* line 27, scss/pages/_generic.scss */
+div.status {
+  padding: 15px;
+}
+/* line 29, scss/pages/_generic.scss */
+div.status.error {
+  background: #c48281;
+  color: white;
+}
+/* line 33, scss/pages/_generic.scss */
+div.status.success {
+  background: #aac481;
+  color: white;
+}
+/* line 36, scss/pages/_generic.scss */
+div.status.success a {
+  color: white;
 }
 
 /* line 2, scss/pages/_home.scss */
@@ -915,4 +1080,92 @@ body {
 #homepage nav a:hover {
   background: #73afb6;
   color: white;
+}
+
+/* line 1, scss/pages/_recipes_individual.scss */
+.recipe_photo {
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  height: 50px;
+  padding: 100px;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* line 10, scss/pages/_recipes_individual.scss */
+a.owner_controls {
+  color: #898989;
+  display: block;
+}
+/* line 13, scss/pages/_recipes_individual.scss */
+a.owner_controls [class^='icon'] {
+  margin-right: 5px;
+  width: 25px;
+}
+
+/* line 18, scss/pages/_recipes_individual.scss */
+.recipe_info {
+  text-align: center;
+  padding: 25px 0;
+}
+/* line 21, scss/pages/_recipes_individual.scss */
+.recipe_info [class^='icon']:not([class^='icon-thumb']) {
+  color: #d6d6d6;
+  display: block;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+/* line 27, scss/pages/_recipes_individual.scss */
+.recipe_info [class='icon-thumbs-up'] {
+  color: #aac481;
+}
+/* line 30, scss/pages/_recipes_individual.scss */
+.recipe_info [class='icon-thumbs-down'] {
+  color: #c48281;
+  margin-left: 15px;
+}
+
+/* line 35, scss/pages/_recipes_individual.scss */
+ul {
+  margin-left: 0;
+  padding: 0;
+}
+
+/* line 39, scss/pages/_recipes_individual.scss */
+ul li {
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+/* line 44, scss/pages/_recipes_individual.scss */
+section.grid:last-child {
+  padding-bottom: 75px;
+}
+
+/* line 2, scss/pages/_recipes_forms.scss */
+.forms .grid__col-1-of-1 {
+  margin: 0 75px;
+  padding: 25px 0;
+}
+/* line 6, scss/pages/_recipes_forms.scss */
+.forms fieldset {
+  width: 46%;
+  padding: 2%;
+  border: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 13, scss/pages/_recipes_forms.scss */
+.forms fieldset label {
+  padding-right: 1%;
+  text-align: right;
+}
+/* line 17, scss/pages/_recipes_forms.scss */
+.forms fieldset input[type='text'] {
+  background: 0;
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+  width: 100%;
 }

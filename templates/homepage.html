@@ -100,23 +100,7 @@
     <link href="/css/main.css" rel="stylesheet" />
 	</head>
 	<body id="homepage">
-		<div id="sidebar">
-			<a href="/"><img src="/images/logo_homepage.png" alt="logo" /></a>
-			<a id="logout" href="{{ logout_url }}">logout</a></p>
-			{% if first_time %}
-			  Welcome, <b>{{ name }}</b>! 
-			{% else %}
-			  Welcome back, <b>{{ name }}</b>!
-			{% endif %}	
-			<nav>
-			  <a href="/recipes/new">new recipe</a>
-			  {% if user_recipes_url %}
-			  	<a href="{{ user_recipes_url }}">your recipes</a>
-			  {% endif %}
-			  <a href="/recipes/saved">saved recipes</a>
-			  <a href="/recipes/all">all recipes</a>
-			</nav>
-		</div>
+		{{ header }}
 		<div id="map-canvas"></div>
 	</body>
 </html>

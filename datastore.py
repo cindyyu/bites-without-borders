@@ -11,7 +11,7 @@ class User(ndb.Model) :
 class Recipe(ndb.Model) : 
   name = ndb.StringProperty(required=True)
   cooktime = ndb.StringProperty()
-  instructions = ndb.TextProperty()
+  instructions = ndb.TextProperty(repeated=True)
   servings = ndb.IntegerProperty()
   author = ndb.StringProperty()
   image = ndb.BlobProperty()

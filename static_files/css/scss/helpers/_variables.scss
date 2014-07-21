@@ -15,3 +15,11 @@ $grey-dark: darken($grey, 5%);
 $grey-light: lighten($grey, 25%);
 $grey-super-dark: darken($grey, 20%);
 $grey-super-light: lighten($grey, 33%);
+
+// success & error
+$success: #AAC481;
+$error: #C48281;
+
+.bg-white {
+	background: $white;
+}

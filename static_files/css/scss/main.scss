@@ -1,4 +1,4 @@
-// Global mixins and variables
+// Global mixins (contains modifiers) and variables
 @import 'helpers/mixins';
 @import 'helpers/variables';
 
@@ -7,6 +7,7 @@
 @import 'base/typography';
 
 // Styling for reusable components like buttons
+@import 'components/icons';
 
 // Contains layout styling
 @import 'layout/grid';
@@ -16,6 +17,8 @@
 // Styling for individual pages
 @import 'pages/generic';
 @import 'pages/home';
+@import 'pages/recipes_individual';
+@import 'pages/recipes_forms';
 
 // Media queries for responsive design
 @import 'layout/media';
