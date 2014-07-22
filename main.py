@@ -305,6 +305,28 @@ class SavedRecipes(webapp2.RequestHandler):
     else :
       self.response.write("EH")
 
+class UserSettings(webapp2.RequestHandler) :
+  def get(self) : 
+    dbUser = UserInfo()
+    if dbUser : 
+      user = dbUser[0]
+      template_values = { 'user': user }
+    else :
+      error = "an error occurred"
+      template_values = { 'error': error }
+    SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
+    self.response.write(SettingsPage)
+  def post(self) : 
+    updated_location = self.request.get("location")
+    dbUser = UserInfo() 
+    if dbUser : 
+      user = dbUser[0]
+      user.location = updated_location
+      user.put()
+      template_values = { 'success': True, 'user': user }
+    SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
+    self.response.write(SettingsPage)
+
 class Image(webapp2.RequestHandler):
   def get(self) : 
     image_id = self.request.get('id')
@@ -324,5 +346,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/thumbsUp', ThumbUpRecipe),
   ('/recipes/thumbsDown', ThumbDownRecipe),
   ('/recipes/saved', SavedRecipes),
-  ('/images', Image)
+  ('/images', Image),
+  ('/settings', UserSettings)
 ], debug=True)
