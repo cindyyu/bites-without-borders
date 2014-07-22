@@ -1,0 +1,35 @@
+.forms {
+	.grid__col-1-of-1 {
+		margin: 0 75px;
+		padding: 25px 0;
+	}
+	a {
+		color: $color-primary;
+	}
+	fieldset {
+		width: 46%;
+		padding: 2%;
+		border: 0;
+		margin: 0; 
+		display: inline-block;
+		vertical-align: top;
+		label {
+			padding-right: 1%;
+			text-align: right;
+		}
+		input[type='text'] {
+			background: 0;
+			border: 0;
+			border-bottom: 1px solid $grey-light;
+			width: 100%;
+		}
+		input[type='submit'] {
+			@include border-radius(3px);
+			background: $color-primary-lighter;
+			border: 0; 
+			color: $white;
+			float: right; 
+			padding: 5px 10px; 
+		}
+	}
+}

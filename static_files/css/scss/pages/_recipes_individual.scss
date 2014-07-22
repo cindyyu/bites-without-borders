@@ -1,0 +1,48 @@
+.recipe_photo {
+	color: $white;
+	font-size: 3em;
+	font-weight: 700;
+	height: 50px;
+	padding: 100px;
+	text-align: center;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+a.owner_controls {
+	color: $grey-dark;
+	display: block;
+	[class^='icon'] {
+		margin-right: 5px;
+		width: 25px;
+	}
+}
+.recipe_info {
+	text-align: center;
+	padding: 25px 0; 
+	[class^='icon']:not([class^='icon-thumb']) {
+		color: $grey-light;
+		display: block;
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+	[class='icon-thumbs-up'] {
+		color: $success;
+	}
+	[class='icon-thumbs-down'] {
+		color: $error;
+		margin-left: 15px;
+	}
+}
+ul, ol {
+	margin-left: 0;
+	padding: 0;
+}
+ol li, ul li {
+	margin-left: 20px; 
+}
+ul li {
+	list-style-type: circle;
+}
+
+section.grid:last-child {
+	padding-bottom: 75px;
+}
