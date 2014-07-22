@@ -52,15 +52,37 @@
           <b>Ready In</b> {{ recipe.cooktime }}
         </div>
         <div class="grid__col recipe_info grid__col--2-of-12">
-          <span class="icon">{{ recipe.thumbsUp - recipe.thumbsDown }}</span>
+          <span class="icon">
+          {% if recipe.thumbsUp and recipe.thumbsDown %}
+            {{ recipe.thumbsUp - recipe.thumbsDown }}
+          {% elif recipe.thumbsUp and not recipe.thumbsDown %}
+            {{ recipe.thumbsUp }}
+          {% elif recipe.thumbsDown and not recipe.thumbsUp %}
+            {{ recipe.thumbsUp}}
+          {% else %}
+            0
+          {% endif %}
+          </span>
           <a href="javascript:thumbsUp('{{recipe.key.id()}}');">
             <span class="icon-thumbs-up"></span>
           </a>
-          <span class="thumbsUpCount">{{ recipe.thumbsUp }}</span>
+          <span class="thumbsUpCount">
+          {% if recipe.thumbsUp %} 
+            {{ recipe.thumbsUp }}
+          {% else %}
+            0
+          {% endif %}
+          </span>
           <a href="javascript:thumbsDown('{{recipe.key.id()}}');">
             <span class="icon-thumbs-down"></span>
           </a>
-          <span class="thumbsDownCount">{{ recipe.thumbsDown }}</span>
+          <span class="thumbsDownCount">
+          {% if recipe.thumbsDown %} 
+            {{ recipe.thumbsDown }}
+          {% else %}
+            0
+          {% endif %}
+          </span>
         </div>
         <div class="grid__col recipe_info grid__col--2-of-12">
           <span class="icon-location"></span>

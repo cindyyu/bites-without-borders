@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"col",
+				"color-primary-lighter"
+			],
+			[
+				"addnew",
+				"addNewInstruction"
+			],
+			[
+				"instru",
+				"instructionsString"
+			],
+			[
+				"get_",
+				"get_current_user"
+			],
+			[
+				"homep",
+				"homepage_header"
+			],
+			[
+				"image",
+				"image_id"
+			],
+			[
+				"rec",
+				"recipeInfo"
+			],
+			[
+				"infow",
+				"infowindow"
+			],
+			[
+				"get",
+				"get_by_id"
+			],
+			[
+				"saved",
+				"savedRecipes"
+			],
+			[
+				"req",
+				"RequestHandler"
+			],
+			[
+				"thum",
+				"thumbsUpCount"
+			],
+			[
+				"Recipe",
+				"RecipeAddedPage"
+			],
+			[
+				"ca",
+				"calculatedLatLng"
+			],
+			[
 				"addI",
 				"addIngredientToList"
 			],
@@ -98,10 +154,6 @@
 			[
 				"orange-",
 				"orange-light"
-			],
-			[
-				"col",
-				"col--1-of-1"
 			],
 			[
 				"grey",
@@ -284,10 +336,6 @@
 				"border-radius"
 			],
 			[
-				"req",
-				"req_exp"
-			],
-			[
 				"inlie",
 				"inline-block"
 			],
@@ -323,13 +371,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "static_files/css/scss/pages/_home.scss",
+			"settings":
+			{
+				"buffer_size": 1256,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 12476,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/homepage.html",
+			"settings":
+			{
+				"buffer_size": 3407,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 74.0,
+		"height": 49.0,
 		"selected_items":
 		[
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -391,7 +467,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 550.0
+		"width": 579.0
 	},
 	"console":
 	{
@@ -422,8 +498,30 @@
 	},
 	"file_history":
 	[
-		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_by.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/homepage.html",
 		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/homepage_header.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/main.py",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_edit.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_add.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/pages/_generic.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_individual.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/pages/_recipes_individual.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/pages/_recipes_forms.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/datastore.py",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/main.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/base/_typography.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/app.yaml",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/helpers/_variables.scss",
+		"/Users/cindy/Downloads/fontello-ed2f2ae7/css/icons.css",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/components/_icons.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/main.css",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_all.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_header.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/pages/_home.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/base/_normalize.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/static_files/css/scss/helpers/_mixins.scss",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_by.html",
+		"/Users/cindy/Dropbox/CSSI/bites-without-borders/templates/recipes_added.html",
 		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
 		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
@@ -527,33 +625,11 @@
 		"/Users/cindy/Sites/TeacherGraph/css/_grid.scss",
 		"/Users/cindy/Sites/TeacherGraph/index.html",
 		"/Users/cindy/Library/Application Support/Sublime Text 3/Packages/User/HTML.sublime-settings",
-		"/Users/cindy/Sites/TeacherGraph/css/scss/default.css",
-		"/private/etc/php.ini.default",
-		"/private/etc/apache2/httpd.conf",
-		"/Users/cindy/Documents/untitled",
-		"/Users/cindy/Library/Caches/TemporaryItems/2-index.php",
-		"/Users/cindy/Library/Caches/TemporaryItems/1-how.php",
-		"/Applications/MAMP/htdocs/friscotailor/about.php",
-		"/Applications/MAMP/htdocs/friscotailor/css/header.php",
-		"/Applications/MAMP/htdocs/friscotailor/location.php",
-		"/Applications/MAMP/htdocs/friscotailor/pricing.php",
-		"/Applications/MAMP/htdocs/friscotailor/css/footer.php",
-		"/Applications/MAMP/htdocs/friscotailor/coupons.php",
-		"/Users/cindy/Library/Caches/TemporaryItems/1-header.php",
-		"/Applications/MAMP/htdocs/newhope/ourprograms.php",
-		"/Applications/MAMP/htdocs/newhope/upcomingevents.php",
-		"/Applications/MAMP/htdocs/newhope/css/style.css",
-		"/Applications/MAMP/htdocs/newhope/css/header.php",
-		"/Applications/MAMP/htdocs/newhope/index.php",
-		"/Applications/MAMP/htdocs/newhope/css/footer.php",
-		"/Applications/MAMP/htdocs/newhope/gethelp.php",
-		"/Applications/MAMP/htdocs/newhope/whoweare.php",
-		"/Applications/MAMP/htdocs/newhope/howtohelp.php",
-		"/Applications/MAMP/htdocs/newhope/pit.php"
+		"/Users/cindy/Sites/TeacherGraph/css/scss/default.css"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -567,6 +643,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"newrecipe",
+			"addNewIngredient",
+			"addNewInstruction",
+			"ingredients",
+			"ingredient",
+			">\n",
+			"ingredientcontainer",
+			"ingredients",
+			"Ingredient",
+			"newRow",
+			"/font/",
+			"icons",
+			"../font",
+			"article",
+			"grid__col ",
+			"grid__col",
+			"1",
+			"{{ name }}",
+			"<br />",
+			"class=\"nav\" ",
+			"recipe_header",
+			"userID",
+			"instructions",
+			"MY_MAP",
+			"id",
+			"key.",
+			"thumbsUp",
+			"location",
 			"editted",
 			"theme",
 			"show",
@@ -666,35 +770,7 @@
 			"change",
 			"/skins",
 			"header",
-			"form",
-			"\"css",
-			"required",
-			"muli",
-			"Mission Revision",
-			"compeition",
-			"D3EDAD",
-			"<br /><a class=\"downloadlink\"",
-			"<a class=\"downloadlink\"",
-			"parallax",
-			".parallax",
-			"muli",
-			"#C4D2DF",
-			"nav[data-tuktuk=\"menu\"]",
-			"body nav[data-tuktuk=\"menu\"]",
-			"body nav[data-tuktuk=\"menu\"] > a:hover",
-			"1abc9c",
-			"a:hover",
-			"#19BC9C",
-			":hover",
-			"return view::",
-			"		\n",
-			"Admin",
-			"Insert",
-			">",
-			"#F4DE79",
-			"f1d866",
-			"1em",
-			"2em"
+			"form"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -770,8 +846,97 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "static_files/css/scss/pages/_home.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1146,
+								1146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 750.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2296,
+								2296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1106.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/homepage.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2768,
+								2768
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1214.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -851,7 +1016,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 281.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
