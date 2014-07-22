@@ -1,31 +1,145 @@
 <!DOCTYPE html>
 <html>
-	<head>
+  <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfoJeJmD19uB8JZ-kfvJoKp5rxyRy7VOo"></script>
+    <link href="/css/main.css" rel="stylesheet" />
     <script>
+      var geocoder;
       var addNewIngredient = function() {
-        $("body").append("<input type='text' class='ingredient' /><br />");
+        $("ul").append("<li><input type='text' class='ingredient' /></li>");
+        return false;
+      }
+      var addNewInstruction = function() {
+        $("ol").append("<li><input type='text' class='instruction' /></li>");
+        return false;
+      }
+      var submitNewRecipe = function(e) {
+        // prevents it from submitting initially
+        e.preventDefault();
+        // creates an array and adds every ingredient entered
+        var ingredients = []
+        $("input.ingredient").each(
+          function() {
+            if ( $(this).val() != '' ) {
+              ingredients[ingredients.length] = $(this).val();
+            }
+          }
+        );
+        var instructions = []
+        $("input.instruction").each(
+          function() {
+            instructions[instructions.length] = $(this).val();
+          }
+        );
+        // creates a string that we'll decode in python 
+        ingredientsString = "";
+        for (i = 0; i < ingredients.length; i++) {
+          if (i == 0) {
+            ingredientsString = "[\"" + ingredients[i] + "\"";
+          } else if (i == ingredients.length - 1) {
+            ingredientsString = ingredientsString + ", \"" + ingredients[i] + "\"]";
+          } else {
+            ingredientsString = ingredientsString + ", \"" + ingredients[i] + "\"";
+          }
+        }
+        instructionsString = "";
+        for (i = 0; i < instructions.length; i++) {
+          if (i == 0 && i == instructions.length - 1) {
+            instructionsString = "[\"" + instructions[i] + "\"]";
+          } else if (i == 0) {
+            instructionsString = "[\"" + instructions[i] + "\"";
+          } else if (i == instructions.length - 1) {
+            instructionsString = instructionsString + ", \"" + instructions[i] + "\"]";
+          } else {
+            instructionsString = instructionsString + ", \"" + instructions[i] + "\"";
+          }
+        }
+        // adds that string to a hidden textfield 
+        $("#allIngredients").val( ingredientsString );
+        $("#allInstructions").val( instructionsString );
+
+        // gets city and converts to geopoint for database
+        geocoder = new google.maps.Geocoder();
+        var location = $("#location").val();
+        geocoder.geocode( { 'address': location}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            calculatedLatLng = results[0].geometry.location;
+            $("input#latlng").val( results[0].geometry.location );
+            $("form").submit();
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
       }
       $(document).ready(
         function() {
-          $("a#newRow").on('click', addNewIngredient);
+          $("a#addNewIngredient").on('click', addNewIngredient);
+          $("a#addNewInstruction").on('click', addNewInstruction);
+          $("input[type=submit]").on('click', submitNewRecipe);
         }
       );
     </script>
   </head>
-  <body>
-  The following recipe has been added: 
-  <h2>{{ recipe_added.name }}</h2>
-  by {{ recipe_added.author }}<br />
-  Takes {{ recipe_added.cook_time }} long to cook and serves {{ recipe_added.servings }}<br />
-  <h3>Instructions</h3>
-  {{ recipe_added.instructions }}
-  <h3>Location</h3>
-  {{ recipe_added.location_name }}
-  <h3>Ingredients</h3>
-  {% for ingredient in recipe_added.ingredients %}
-    {{ ingredient }}
-  {% endfor %}<br /><br />
-  {{ newRecipe }}
+  <body class="page forms">
+    <div class="container">
+      {{ header }}
+      <section class="grid bg-white">
+        <div class="grid__col grid__col-1-of-1 grid__col--centered">
+          <h2>Recipe Added</h2>
+            {% if error %}
+              <div class="status error">
+                {{ error }}
+              </div>
+            {% else %}
+              {% if success %}
+                <div class="status success">
+                Your recipe upload was successful. <a href="/recipe/view/{{ recipe_added.id }}">View recipe here.</a>
+                </div>
+              {% endif %}
+            {% endif %}
+          <form action="/recipes/editted" enctype="multipart/form-data" method="post">
+            <fieldset>
+              <label for="name">Recipe Name:</label>
+              <input type="text" name="name" value="{{ recipe_added.name }}" disabled />
+            </fieldset><fieldset>
+              <label for="cooktime">Cook Time:</label>
+              <input type="text" name="cooktime" value="{{ recipe_added.cooktime }}" disabled />
+            </fieldset><fieldset>
+              <label for="servings">Servings</label>
+              <input type="text" name="servings" value="{{ recipe_added.servings }}" disabled />
+            </fieldset><fieldset>
+              <label for="location">Location</label>
+              <input type="text" name="location_name" id="location" value="{{ recipe_added.location_name }}" disabled />
+            </fieldset><fieldset>
+              <label for="ingredients">Ingredients</label><br />
+              <ul>
+                {% for ingredient in recipe_added.ingredients %}
+                <li>
+                  <input type="text" class="ingredient" value="{{ ingredient }}" disabled />
+                </li>
+                {% endfor %}
+              </ul>
+              <a id="addNewIngredient" href="#">add new ingredient</a>
+            </fieldset><fieldset>
+              <label for="instructions">Instructions</label>
+              <ol>
+                {% for instruction in recipe_added.instructions %}
+                <li>
+                  <input type="text" class="instruction" value="{{ instruction }}" disabled />
+                </li>
+                {% endfor %}
+              </ol>
+              <a id="addNewInstruction" href="#">add step</a>
+            </fieldset><fieldset>
+              <p>Photo</p>
+              {% if recipe_added.image %}
+                <img src="/images?id={{ recipe_added.id }}" width="200" alt="current recipe image" />
+              {% endif %}
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

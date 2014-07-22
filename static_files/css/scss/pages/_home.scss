@@ -18,11 +18,13 @@
 		text-align: center;
 		z-index: 1;
 	}
-	a#logout {
+	#options {
 		position: absolute; 
-		bottom: 5%;
-		color: $color-primary;
+		bottom: 2.5%;
 		right: 10%;
+		a {
+			color: $color-primary;
+		}
 	}
 	a img {
 		border: 0;

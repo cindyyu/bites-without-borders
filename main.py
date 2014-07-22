@@ -139,7 +139,8 @@ class NewRecipe(webapp2.RequestHandler):
     if recipe_added['image'] :
       newRecipe.image = recipe_added['image']
     newRecipe.put()
-    template_values = { 'recipe_added': recipe_added, 'header': GetHeader('recipe'), 'userID' : UserId() }
+    recipe_added['id'] = newRecipe.key.id()
+    template_values = { 'success': True, 'recipe_added': recipe_added, 'header': GetHeader('recipe'), 'userID' : UserId() }
     RecipeAddedPage = jinja_environment.get_template('templates/recipes_added.html').render(template_values)
     self.response.write(RecipeAddedPage)
 
@@ -169,7 +170,7 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'recipes' : recipes, 'author' : author[0].name }
+        template_values = { 'recipes' : recipes, 'author' : author[0].name, 'author_pic' : author[0].picUrl() }
       else : 
         error = "This user has not uploaded any recipes."
         template_values = { 'error' : error }

@@ -2,6 +2,7 @@
 	{{ error }}
 {% else %}
 <h1>recipes by {{ author }}</h1>
+<img src="{{ author_pic }}" alt="" /><br />
 
 {% for recipe in recipes %}
 	<b>recipe name</b> {{ recipe.name }}
