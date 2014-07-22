@@ -25,7 +25,7 @@ import webapp2
 import os 
 import json
 import jinja2
-import webapp2_extras.appengine.auth.models
+#import webapp2_extras.appengine.auth.models
 
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -317,11 +317,14 @@ class UserSettings(webapp2.RequestHandler) :
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
     self.response.write(SettingsPage)
   def post(self) : 
-    updated_location = self.request.get("location")
     dbUser = UserInfo() 
     if dbUser : 
       user = dbUser[0]
+      updated_location = self.request.get("location")
+      updated_image = self.request.get("image")
       user.location = updated_location
+      if updated_image != '' : 
+        user.pic = updated_image
       user.put()
       template_values = { 'success': True, 'user': user }
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
@@ -331,6 +334,13 @@ class Image(webapp2.RequestHandler):
   def get(self) : 
     image_id = self.request.get('id')
     image = Recipe.get_by_id(int(image_id)).image
+    self.response.headers['Content-Type'] = 'image/png'
+    self.response.write(image)
+
+class UserPic(webapp2.RequestHandler):
+  def get(self) : 
+    image_id = self.request.get('id')
+    image = User.get_by_id(int(image_id)).pic
     self.response.headers['Content-Type'] = 'image/png'
     self.response.write(image)
 
@@ -347,5 +357,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/thumbsDown', ThumbDownRecipe),
   ('/recipes/saved', SavedRecipes),
   ('/images', Image),
-  ('/settings', UserSettings)
+  ('/settings', UserSettings),
+  ('/userpic', UserPic)
 ], debug=True)

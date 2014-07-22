@@ -4,9 +4,12 @@ class User(ndb.Model) :
   user_id = ndb.StringProperty(required=True)
   name = ndb.StringProperty(required=True)
   location = ndb.StringProperty()
+  pic = ndb.BlobProperty(indexed=False)
   savedRecipes = ndb.StringProperty(repeated=True)
   def recipesUrl(self):
     return '/recipes/by/%s' % self.key.id()
+  def picUrl(self):
+    return '/userpic?id=%s' % self.key.id()
 
 class Recipe(ndb.Model) : 
   name = ndb.StringProperty(required=True)
