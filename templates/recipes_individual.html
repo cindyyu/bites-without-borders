@@ -14,7 +14,8 @@
       	)
       	.done(
       		function(data) {
-      			$(".thumbsUpCount").text(data['recipe_thumbsUp']);
+            $(".thumbsUpCount").text(data['recipe_thumbsUp']);
+            $(".net_thumbs").text(data['net_thumbs']);
       		}
       	);
       };
@@ -30,6 +31,7 @@
       	.done(
       		function(data) {
       			$(".thumbsDownCount").text(data['recipe_thumbsDown']);
+            $(".net_thumbs").text(data['net_thumbs']);
       		}
       	);
       };
@@ -52,7 +54,7 @@
           <b>Ready In</b> {{ recipe.cooktime }}
         </div>
         <div class="grid__col recipe_info grid__col--2-of-12">
-          <span class="icon">
+          <span class="icon net_thumbs">
           {% if recipe.thumbsUp and recipe.thumbsDown %}
             {{ recipe.thumbsUp - recipe.thumbsDown }}
           {% elif recipe.thumbsUp and not recipe.thumbsDown %}

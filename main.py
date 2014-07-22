@@ -72,7 +72,7 @@ class HomeHandler(webapp2.RequestHandler):
           'latlng': str(rawRecipe.location), 
           'location': rawRecipe.location_name, 
           'cooktime': rawRecipe.cooktime, 
-          'image': '<img src="' + rawRecipe.imageUrl() + '" alt="" />',
+          'image': '<div style="background-image: url(' + rawRecipe.imageUrl() + ')"></div>',
           'servings': rawRecipe.servings, 
           'ingredients': json.dumps(rawRecipe.ingredients),
           'recipeUrl' : rawRecipe.viewUrl()
@@ -226,7 +226,8 @@ class EdittedRecipe(webapp2.RequestHandler):
     recipe_to_edit.servings = recipe_editted['servings']
     recipe_to_edit.location = recipe_editted['location']
     recipe_to_edit.location_name = recipe_editted['location_name']
-    recipe_to_edit.ingredients = recipe_editted['ingredients']
+    if recipe_editted['ingredients'] :
+      recipe_to_edit.ingredients = recipe_editted['ingredients']
     recipe_to_edit.put()
     self.redirect(recipe_to_edit.editUrlSuccess())
 
@@ -276,7 +277,7 @@ class ThumbUpRecipe(webapp2.RequestHandler):
       recipe.put()
       user.savedRecipes.append( data['recipeID'] );
       user.put()
-    self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp})))
+    self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp, 'net_thumbs': recipe.thumbsUp - recipe.thumbsDown})))
 
 class ThumbDownRecipe(webapp2.RequestHandler):
   def post(self):
@@ -287,7 +288,7 @@ class ThumbDownRecipe(webapp2.RequestHandler):
     else :
       recipe.thumbsDown += 1
     recipe.put()
-    self.response.write(json.dumps(({'recipe_thumbsDown': recipe.thumbsDown})))
+    self.response.write(json.dumps(({'recipe_thumbsDown': recipe.thumbsDown, 'net_thumbs': recipe.thumbsUp - recipe.thumbsDown})))
 
 class SavedRecipes(webapp2.RequestHandler):
   def get(self) : 

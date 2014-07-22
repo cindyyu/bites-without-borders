@@ -1115,6 +1115,13 @@ div.status.success a {
 #recipeInfo h3 {
   margin: 0;
 }
+/* line 80, scss/pages/_home.scss */
+#recipeInfo div {
+  background-size: cover;
+  background-position: center center;
+  height: 100px;
+  margin: 10px 0;
+}
 
 /* line 1, scss/pages/_recipes_individual.scss */
 .recipe_photo {
