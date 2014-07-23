@@ -1,7 +1,7 @@
 <div id="sidebar">
 	<a href="/"><img src="/images/logo_homepage.png" alt="logo" /></a>
 	<div id="options">
-		<a href="/settings">account settings</a> | <a href="{{ logout_url }}">logout</a></p>
+		<a href="/settings"><span class="icon-cog"></span> account settings</a><a href="{{ logout_url }}"><span class="icon-logout"></span> logout</a></p>
 	</div>
 	{% if first_time %}
 	  Welcome, <b>{{ name }}</b>!

@@ -485,8 +485,8 @@ h2 {
 
 @font-face {
   font-family: 'icons';
-  src: url("/font/icons.eot?6909850");
-  src: url("/font/icons.eot?6909850#iefix") format("embedded-opentype"), url("/font/icons.woff?6909850") format("woff"), url("/font/icons.ttf?6909850") format("truetype"), url("/font/icons.svg?6909850#icons") format("svg");
+  src: url("/font/icons.eot?33868269");
+  src: url("/font/icons.eot?33868269#iefix") format("embedded-opentype"), url("/font/icons.woff?33868269") format("woff"), url("/font/icons.ttf?33868269") format("truetype"), url("/font/icons.svg?33868269#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -497,7 +497,7 @@ h2 {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'icons';
-    src: url('../font/icons.svg?6909850#icons') format('svg');
+    src: url('../font/icons.svg?33868269#icons') format('svg');
   }
 }
 */
@@ -593,6 +593,36 @@ h2 {
 }
 
 /* '' */
+/* line 64, scss/components/_icons.scss */
+.icon-remove:before {
+  content: '\e80b';
+}
+
+/* '' */
+/* line 65, scss/components/_icons.scss */
+.icon-add:before {
+  content: '\e80c';
+}
+
+/* '' */
+/* line 66, scss/components/_icons.scss */
+.icon-thumbtack:before {
+  content: '\e80d';
+}
+
+/* '' */
+/* line 67, scss/components/_icons.scss */
+.icon-logout:before {
+  content: '\e80e';
+}
+
+/* '' */
+/* line 68, scss/components/_icons.scss */
+.icon-cog:before {
+  content: '\e80f';
+}
+
+/* '' */
 /*-----------------------------------*\
 
   $TOAST-GRID
@@ -1056,19 +1086,24 @@ div.status.success a {
 /* line 25, scss/pages/_home.scss */
 #homepage #options a {
   color: #5e9ca0;
+  margin-left: 25px;
 }
-/* line 29, scss/pages/_home.scss */
+/* line 28, scss/pages/_home.scss */
+#homepage #options a:hover {
+  color: #73afb6;
+}
+/* line 33, scss/pages/_home.scss */
 #homepage a img {
   border: 0;
   display: block;
   margin: 0 auto;
 }
-/* line 34, scss/pages/_home.scss */
+/* line 38, scss/pages/_home.scss */
 #homepage nav {
   margin-top: 25px;
   width: 100%;
 }
-/* line 37, scss/pages/_home.scss */
+/* line 41, scss/pages/_home.scss */
 #homepage nav a {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1086,7 +1121,7 @@ div.status.success a {
   text-transform: uppercase;
   width: 76%;
 }
-/* line 51, scss/pages/_home.scss */
+/* line 55, scss/pages/_home.scss */
 #homepage nav a [class^='icon'] {
   color: #e2da99;
   font-size: 1.25em;
@@ -1094,37 +1129,37 @@ div.status.success a {
   right: 10%;
   top: 8px;
 }
-/* line 58, scss/pages/_home.scss */
+/* line 62, scss/pages/_home.scss */
 #homepage nav a:hover {
   background: #5e9ca0;
   color: white;
 }
-/* line 61, scss/pages/_home.scss */
+/* line 65, scss/pages/_home.scss */
 #homepage nav a:hover [class^='icon'] {
   color: #e2da99;
 }
 
-/* line 68, scss/pages/_home.scss */
+/* line 72, scss/pages/_home.scss */
 #recipeInfo {
   width: 250px;
   height: 200px;
 }
-/* line 71, scss/pages/_home.scss */
+/* line 75, scss/pages/_home.scss */
 #recipeInfo img {
   display: block;
   margin: 10px auto;
   height: 100px;
   width: auto;
 }
-/* line 77, scss/pages/_home.scss */
+/* line 81, scss/pages/_home.scss */
 #recipeInfo h3 {
   margin: 0;
 }
-/* line 79, scss/pages/_home.scss */
+/* line 83, scss/pages/_home.scss */
 #recipeInfo h3 a {
   float: right;
 }
-/* line 83, scss/pages/_home.scss */
+/* line 87, scss/pages/_home.scss */
 #recipeInfo div {
   background-size: cover;
   background-position: center center;

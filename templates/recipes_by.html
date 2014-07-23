@@ -13,7 +13,9 @@
       	<div class="grid">
       		<div class="grid__col grid__col--2-of-6">
       			<h1>{{ author }}'s Recipes</h1>
+      			{% if author_bio %}
       			{{ author_bio }}
+      			{% endif %}
       		</div>
       		<div class="grid__col grid__col--2-of-6">
       			{% if author_pic %}
