@@ -1057,6 +1057,7 @@ div.status.success a {
 
 /* line 2, scss/pages/_home.scss */
 #homepage div#map-canvas {
+  background: #B3DAEE;
   height: 100%;
   left: 0;
   position: absolute;
@@ -1064,7 +1065,7 @@ div.status.success a {
   width: 100%;
   z-index: 0;
 }
-/* line 10, scss/pages/_home.scss */
+/* line 11, scss/pages/_home.scss */
 #homepage div#sidebar {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1078,33 +1079,33 @@ div.status.success a {
   text-align: center;
   z-index: 1;
 }
-/* line 21, scss/pages/_home.scss */
+/* line 22, scss/pages/_home.scss */
 #homepage #options {
   position: absolute;
   bottom: 2.5%;
   right: 10%;
 }
-/* line 25, scss/pages/_home.scss */
+/* line 26, scss/pages/_home.scss */
 #homepage #options a {
   color: #5e9ca0;
   margin-left: 25px;
 }
-/* line 28, scss/pages/_home.scss */
+/* line 29, scss/pages/_home.scss */
 #homepage #options a:hover {
   color: #73afb6;
 }
-/* line 33, scss/pages/_home.scss */
+/* line 34, scss/pages/_home.scss */
 #homepage a img {
   border: 0;
   display: block;
   margin: 0 auto;
 }
-/* line 38, scss/pages/_home.scss */
+/* line 39, scss/pages/_home.scss */
 #homepage nav {
   margin-top: 25px;
   width: 100%;
 }
-/* line 41, scss/pages/_home.scss */
+/* line 42, scss/pages/_home.scss */
 #homepage nav a {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1122,7 +1123,7 @@ div.status.success a {
   text-transform: uppercase;
   width: 76%;
 }
-/* line 55, scss/pages/_home.scss */
+/* line 56, scss/pages/_home.scss */
 #homepage nav a [class^='icon'] {
   color: #e2da99;
   font-size: 1.25em;
@@ -1130,41 +1131,41 @@ div.status.success a {
   right: 10%;
   top: 8px;
 }
-/* line 62, scss/pages/_home.scss */
+/* line 63, scss/pages/_home.scss */
 #homepage nav a:hover {
   background: #5e9ca0;
   color: white;
 }
-/* line 65, scss/pages/_home.scss */
+/* line 66, scss/pages/_home.scss */
 #homepage nav a:hover [class^='icon'] {
   color: #e2da99;
 }
 
-/* line 72, scss/pages/_home.scss */
+/* line 73, scss/pages/_home.scss */
 #recipeInfo {
   width: 250px;
   height: 200px;
 }
-/* line 75, scss/pages/_home.scss */
+/* line 76, scss/pages/_home.scss */
 #recipeInfo a {
   color: #5e9ca0;
 }
-/* line 78, scss/pages/_home.scss */
+/* line 79, scss/pages/_home.scss */
 #recipeInfo img {
   display: block;
   margin: 10px auto;
   height: 100px;
   width: auto;
 }
-/* line 84, scss/pages/_home.scss */
+/* line 85, scss/pages/_home.scss */
 #recipeInfo h3 {
   margin: 0;
 }
-/* line 86, scss/pages/_home.scss */
+/* line 87, scss/pages/_home.scss */
 #recipeInfo h3 a {
   float: right;
 }
-/* line 90, scss/pages/_home.scss */
+/* line 91, scss/pages/_home.scss */
 #recipeInfo div {
   background-size: cover;
   background-position: center center;
@@ -1366,37 +1367,38 @@ section.grid:last-child {
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 5;
 }
-/* line 59, scss/pages/_recipes_view.scss */
+/* line 60, scss/pages/_recipes_view.scss */
 .recipes_view #remove_saved_recipe a.remove_saved {
   color: white;
 }
-/* line 63, scss/pages/_recipes_view.scss */
+/* line 64, scss/pages/_recipes_view.scss */
 .recipes_view div.thumbs_up {
   right: 10px;
 }
-/* line 66, scss/pages/_recipes_view.scss */
+/* line 67, scss/pages/_recipes_view.scss */
 .recipes_view div.location {
   left: 10px;
 }
-/* line 69, scss/pages/_recipes_view.scss */
+/* line 70, scss/pages/_recipes_view.scss */
 .recipes_view div.location, .recipes_view div.thumbs_up {
   position: absolute;
   bottom: 10px;
   background: rgba(0, 0, 0, 0.65);
 }
-/* line 74, scss/pages/_recipes_view.scss */
+/* line 75, scss/pages/_recipes_view.scss */
 .recipes_view div.view_more a {
   color: white;
 }
 
-/* line 78, scss/pages/_recipes_view.scss */
+/* line 79, scss/pages/_recipes_view.scss */
 section.author_info {
   background: url("/images/author_bg.png");
   color: white;
   padding: 45px 5%;
 }
-/* line 82, scss/pages/_recipes_view.scss */
+/* line 83, scss/pages/_recipes_view.scss */
 section.author_info #author_pic {
   border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1411,16 +1413,16 @@ section.author_info #author_pic {
   margin: 0 auto;
   display: block;
 }
-/* line 94, scss/pages/_recipes_view.scss */
+/* line 95, scss/pages/_recipes_view.scss */
 section.author_info .grid__col {
   vertical-align: center;
 }
-/* line 97, scss/pages/_recipes_view.scss */
+/* line 98, scss/pages/_recipes_view.scss */
 section.author_info .grid__col:first-child {
   text-align: right;
   font-size: 18px;
 }
-/* line 101, scss/pages/_recipes_view.scss */
+/* line 102, scss/pages/_recipes_view.scss */
 section.author_info h1 {
   color: #fff;
   font-size: 1.5em;
