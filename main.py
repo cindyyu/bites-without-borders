@@ -102,14 +102,14 @@ class HomeHandler(webapp2.RequestHandler):
       name = user.nickname()
       firstTime = True
 
-    template_values = { 'recipes': json.dumps(recipes), 'header': GetHeader('homepage'), 'logout_url': users.create_logout_url('/'), 'first_time': firstTime }
+    template_values = { 'title': 'Homepage', 'recipes': json.dumps(recipes), 'header': GetHeader('homepage'), 'logout_url': users.create_logout_url('/'), 'first_time': firstTime }
     Homepage = jinja_environment.get_template('templates/homepage.html').render(template_values)
     self.response.write(Homepage)
 
 class NewRecipe(webapp2.RequestHandler): 
   def get(self): 
     # show new recipe form
-    template_values = { 'header': GetHeader('recipe'), 'userID' : UserId() }
+    template_values = { 'title': 'Add New Recipe', 'header': GetHeader('recipe'), 'userID' : UserId() }
     NewRecipePage = jinja_environment.get_template('templates/recipes_add.html').render(template_values)
     self.response.write(NewRecipePage)
   def post(self):
@@ -140,7 +140,7 @@ class NewRecipe(webapp2.RequestHandler):
       newRecipe.image = recipe_added['image']
     newRecipe.put()
     recipe_added['id'] = newRecipe.key.id()
-    template_values = { 'success': True, 'recipe_added': recipe_added, 'header': GetHeader('recipe'), 'userID' : UserId() }
+    template_values = { 'title': 'New Recipe Added', 'success': True, 'recipe_added': recipe_added, 'header': GetHeader('recipe'), 'userID' : UserId() }
     RecipeAddedPage = jinja_environment.get_template('templates/recipes_added.html').render(template_values)
     self.response.write(RecipeAddedPage)
 
@@ -158,7 +158,7 @@ class ViewIndividualRecipe(webapp2.RequestHandler):
       else :
         isOwner = False
       recipe_author_name = User.query().filter(User.user_id == recipe.author).fetch(1)[0].name
-      template_values = { 'recipe' : recipe, 'isOwner' : isOwner, 'header': GetHeader('recipe'), 'recipe_author_name': recipe_author_name } 
+      template_values = { 'title': recipe.name, 'recipe' : recipe, 'isOwner' : isOwner, 'header': GetHeader('recipe'), 'recipe_author_name': recipe_author_name } 
     IndividualRecipe = jinja_environment.get_template('templates/recipes_individual.html').render(template_values)
     self.response.write(IndividualRecipe)
 
@@ -170,17 +170,17 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'recipes' : recipes, 'author' : author[0].name }
+        template_values = { 'recipes' : recipes, 'author' : author[0].name , 'title' : 'Recipes by ' + author[0].name}
         if author[0].pic :
           template_values['author_pic'] = author[0].picUrl()
         if author[0].location :
           template_values['author_location'] = author[0].location
       else : 
         error = "This user has not uploaded any recipes."
-        template_values = { 'error' : error }
+        template_values = { 'title': 'Error', 'error' : error }
     else : 
       error = "This user doesn't not exist."
-      template_values = { 'error' : error }
+      template_values = { 'title': 'Error', 'error' : error }
     RecipesBy = jinja_environment.get_template('templates/recipes_by.html').render(template_values)
     self.response.write(RecipesBy)
 
@@ -192,13 +192,13 @@ class EditRecipePage(webapp2.RequestHandler):
     if recipe :
       # check if user has permission to edit the recipe
       if recipe.author == UserId() : 
-        template_values = { 'recipe' : recipe, 'recipe_id' : recipe_id, 'success' : success }
+        template_values = { 'title': 'Edit Recipe', 'recipe' : recipe, 'recipe_id' : recipe_id, 'success' : success }
       else :
         error = "that's not your recipe yo"
-        template_values = { 'error' : error } 
+        template_values = { 'title': 'Error', 'error' : error } 
     else : 
       error = "that doesn't exist, yo"
-      template_values = { 'error' : error } 
+      template_values = { 'title': 'Error', 'error' : error } 
     template_values['header'] = GetHeader('recipe')
     EditRecipePage = jinja_environment.get_template('templates/recipes_edit.html').render(template_values)
     self.response.write(EditRecipePage)
@@ -239,7 +239,7 @@ class ViewAllRecipes(webapp2.RequestHandler):
   def get(self): 
     # fetch all recipes
     recipes = Recipe.query().fetch()
-    template_values = {'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'All Recipes'}
+    template_values = {'title': 'All Recipes', 'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'All Recipes'}
     ViewAllRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
     self.response.write(ViewAllRecipes)
 
@@ -253,11 +253,11 @@ class DeleteRecipe(webapp2.RequestHandler):
         recipe.key.delete()
         template_values = {}
       else :
-        error = "that's not your recipe yo"
-        template_values = { 'error' : error } 
+        error = "You do not have permission to do this."
+        template_values = {'title': 'Error', 'error' : error } 
     else : 
-      error = "that doesn't exist, yo"
-      template_values = { 'error' : error } 
+      error = "The recipe you are trying to delete does not exist."
+      template_values = {'title': 'Error', 'error' : error } 
     DeleteRecipePage = jinja_environment.get_template('templates/recipes_delete.html').render(template_values)
     self.response.write(DeleteRecipePage)
 
@@ -305,7 +305,7 @@ class SavedRecipes(webapp2.RequestHandler):
           savedRecipe = Recipe.get_by_id(int(recipe))
           if savedRecipe :
             recipes.append(savedRecipe)
-      template_values = { 'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'Your Saved Recipes' } 
+      template_values = { 'title': 'Your Saved Recipes', 'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'Your Saved Recipes' } 
       SavedRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
       self.response.write(SavedRecipes)
     else :
@@ -316,10 +316,10 @@ class UserSettings(webapp2.RequestHandler) :
     dbUser = UserInfo()
     if dbUser : 
       user = dbUser[0]
-      template_values = { 'user': user }
+      template_values = { 'title': 'Edit User Settings', 'user': user }
     else :
       error = "an error occurred"
-      template_values = { 'error': error }
+      template_values = { 'title': 'Error', 'error': error }
     template_values['header'] = GetHeader('recipe')
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
     self.response.write(SettingsPage)
@@ -333,7 +333,7 @@ class UserSettings(webapp2.RequestHandler) :
       if updated_image != '' : 
         user.pic = updated_image
       user.put()
-      template_values = { 'success': True, 'user': user, 'header': GetHeader('recipe') }
+      template_values = { 'title': 'Settings Saved', 'success': True, 'user': user, 'header': GetHeader('recipe') }
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
     self.response.write(SettingsPage)
 
