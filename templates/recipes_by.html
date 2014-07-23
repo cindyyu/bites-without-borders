@@ -13,6 +13,7 @@
       	<div class="grid">
       		<div class="grid__col grid__col--2-of-6">
       			<h1>{{ author }}'s Recipes</h1>
+      			{{ author_bio }}
       		</div>
       		<div class="grid__col grid__col--2-of-6">
       			{% if author_pic %}
@@ -28,6 +29,9 @@
         			{% else %}
         			Unknown
         			{% endif %}
+        		</h2>
+        		<h2><span class="icon-author"></span>
+        			authored {{ recipes | length }} recipes
         		</h2>
       		</div>
       	</div>

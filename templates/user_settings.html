@@ -19,7 +19,7 @@
             {% else %}
               {% if success %}
                 <div class="status success">
-                Your edit was successful. 
+                Your edit was successful. <a href="/recipes/by/{{ user.user_id }}">Click here to view your page.</a>
                 </div>
               {% endif %}
             {% endif %}
@@ -28,9 +28,12 @@
 							<label for="location">Location</label>
 							<input type="text" name="location" value="{{ user.location }}" />
 						</fieldset><fieldset>
-							<label for="image">Upload a user image</label>
-							<input type="file" name="image" />
-						</fieldset><fieldset>
+              <label for="bio">Biography</label>
+              <textarea name="bio" placeholder="Introduce yourself!">{{ user.bio }}</textarea>
+            </fieldset><fieldset>
+              <label for="image">Upload a user image</label>
+              <input type="file" name="image" />
+            </fieldset><fieldset>
 						{% if user.pic %}
 							Your current user pic: <br />
 							<img src="{{ user.picUrl() }}" alt="" />

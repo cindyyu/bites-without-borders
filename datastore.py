@@ -3,6 +3,7 @@ from google.appengine.ext import ndb
 class User(ndb.Model) : 
   user_id = ndb.StringProperty(required=True)
   name = ndb.StringProperty(required=True)
+  bio = ndb.TextProperty()
   location = ndb.StringProperty()
   pic = ndb.BlobProperty(indexed=False)
   savedRecipes = ndb.StringProperty(repeated=True)

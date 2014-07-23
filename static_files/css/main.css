@@ -988,8 +988,8 @@ h2 {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background: #73afb6;
-  color: white;
+  color: #73afb6;
+  background: white;
   display: inline-block;
   font-weight: 500;
   line-height: 20px;
@@ -999,22 +999,27 @@ h2 {
   text-transform: uppercase;
   vertical-align: middle;
 }
+/* line 23, scss/pages/_generic.scss */
+.page nav a:hover {
+  background: #e2da99;
+  color: white;
+}
 
-/* line 27, scss/pages/_generic.scss */
+/* line 31, scss/pages/_generic.scss */
 div.status {
   padding: 15px;
 }
-/* line 29, scss/pages/_generic.scss */
+/* line 33, scss/pages/_generic.scss */
 div.status.error {
   background: #c48281;
   color: white;
 }
-/* line 33, scss/pages/_generic.scss */
+/* line 37, scss/pages/_generic.scss */
 div.status.success {
   background: #aac481;
   color: white;
 }
-/* line 36, scss/pages/_generic.scss */
+/* line 40, scss/pages/_generic.scss */
 div.status.success a {
   color: white;
 }
@@ -1230,7 +1235,7 @@ section.grid:last-child {
   text-align: right;
 }
 /* line 30, scss/pages/_recipes_forms.scss */
-.forms fieldset input[type='text'], .forms fieldset input[type='file'] {
+.forms fieldset input[type='text'], .forms fieldset input[type='file'], .forms fieldset textarea {
   background: 0;
   border: 0;
   border-bottom: 1px solid #d6d6d6;
@@ -1314,9 +1319,10 @@ section.grid:last-child {
 /* line 50, scss/pages/_recipes_view.scss */
 section.author_info {
   background: url("/images/author_bg.png");
+  color: white;
   padding: 45px 5%;
 }
-/* line 53, scss/pages/_recipes_view.scss */
+/* line 54, scss/pages/_recipes_view.scss */
 section.author_info #author_pic {
   border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1330,12 +1336,18 @@ section.author_info #author_pic {
   margin: 0 auto;
   display: block;
 }
-/* line 64, scss/pages/_recipes_view.scss */
+/* line 65, scss/pages/_recipes_view.scss */
 section.author_info .grid__col {
   vertical-align: center;
 }
-/* line 67, scss/pages/_recipes_view.scss */
+/* line 68, scss/pages/_recipes_view.scss */
+section.author_info .grid__col:first-child {
+  text-align: right;
+  font-size: 18px;
+}
+/* line 72, scss/pages/_recipes_view.scss */
 section.author_info h1 {
   color: #fff;
+  font-size: 1.5em;
   text-align: right;
 }

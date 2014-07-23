@@ -10,8 +10,8 @@
 		float: right; 
 		a {
 			@include border-radius(3px);
-			background: $color-primary-lighter; 
-			color: $white;
+			color: $color-primary-lighter; 
+			background: $white;
 			display: inline-block;
 			font-weight: 500;
 			line-height: 20px; 
@@ -20,6 +20,10 @@
 			text-align: center; 
 			text-transform: uppercase;
 			vertical-align: middle;
+			&:hover {
+				background: $color-secondary;
+				color: $white;
+			}
 		}
 	}
 }

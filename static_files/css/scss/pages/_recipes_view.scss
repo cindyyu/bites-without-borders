@@ -49,6 +49,7 @@
 }
 section.author_info {
   background: url('/images/author_bg.png');
+  color: $white;
   padding: 45px 5%;
   #author_pic {
     @include border-radius(50%);
@@ -64,8 +65,13 @@ section.author_info {
   .grid__col {
     vertical-align: center;
   }
+  .grid__col:first-child {
+    text-align: right;
+    font-size: 18px;
+  }
   h1 {
     color: #fff;
+    font-size: 1.5em;
     text-align: right;
   }
 }

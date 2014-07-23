@@ -53,7 +53,7 @@ def GetHeader(type) :
     header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
 
   homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
-  recipe_header = jinja_environment.get_template('templates/recipes_header.html').render({'name' : name})
+  recipe_header = jinja_environment.get_template('templates/recipes_header.html').render({'name' : name, 'user_recipes_url': '/recipes/by/' + str(dbUser[0].user_id)})
 
   if type == 'homepage' : 
     return homepage_header
@@ -170,7 +170,7 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'header': GetHeader('recipe'), 'recipes' : recipes, 'author' : author[0].name , 'title' : 'Recipes by ' + author[0].name}
+        template_values = { 'header': GetHeader('recipe'), 'recipes' : recipes, 'author' : author[0].name ,'author_bio' : author[0].bio , 'title' : 'Recipes by ' + author[0].name}
         if author[0].pic :
           template_values['author_pic'] = author[0].picUrl()
         if author[0].location :
@@ -329,6 +329,8 @@ class UserSettings(webapp2.RequestHandler) :
       user = dbUser[0]
       updated_location = self.request.get("location")
       updated_image = self.request.get("image")
+      updated_bio = self.request.get("bio")
+      user.bio = updated_bio
       user.location = updated_location
       if updated_image != '' : 
         user.pic = updated_image
