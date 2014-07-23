@@ -23,7 +23,6 @@ class Recipe(ndb.Model) :
   location_name = ndb.StringProperty()
   ingredients = ndb.StringProperty(repeated=True) 
   thumbsUp = ndb.IntegerProperty(default=0)
-  thumbsDown = ndb.IntegerProperty(default=0)
   def imageUrl(self):
     return '/images?id=%s' % self.key.id()
   def deleteUrl(self):

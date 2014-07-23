@@ -281,18 +281,7 @@ class ThumbUpRecipe(webapp2.RequestHandler):
       recipe.put()
       user.savedRecipes.append( data['recipeID'] );
       user.put()
-    self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp, 'net_thumbs': recipe.thumbsUp - recipe.thumbsDown})))
-
-class ThumbDownRecipe(webapp2.RequestHandler):
-  def post(self):
-    data = json.loads(self.request.body)
-    recipe = Recipe.get_by_id(int(data['recipeID']))
-    if recipe.thumbsDown == None :
-      recipe.thumbsDown = 1
-    else :
-      recipe.thumbsDown += 1
-    recipe.put()
-    self.response.write(json.dumps(({'recipe_thumbsDown': recipe.thumbsDown, 'net_thumbs': recipe.thumbsUp - recipe.thumbsDown})))
+    self.response.write(json.dumps(({'recipe_thumbsUp': recipe.thumbsUp, 'net_thumbs': recipe.thumbsUp})))
 
 class SavedRecipes(webapp2.RequestHandler):
   def get(self) : 
@@ -382,7 +371,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/all', ViewAllRecipes),
   ('/recipes/delete/(\d+)', DeleteRecipe),
   ('/recipes/thumbsUp', ThumbUpRecipe),
-  ('/recipes/thumbsDown', ThumbDownRecipe),
   ('/recipes/saved', SavedRecipes),
   ('/images', Image),
   ('/settings', UserSettings),

@@ -20,22 +20,6 @@
       		}
       	);
       };
-      var thumbsDown = function(recipeID) {
-      	$.ajax(
-      		{
-      			type: "POST", 
-      			url: "/recipes/thumbsDown",
-      			dataType: 'json', 
-      			data: JSON.stringify({ "recipeID": recipeID })
-      		}
-      	)
-      	.done(
-      		function(data) {
-      			$(".thumbsDownCount").text(data['recipe_thumbsDown']);
-            $(".net_thumbs").text(data['net_thumbs']);
-      		}
-      	);
-      };
     </script>
     <link href="/css/main.css" rel="stylesheet" />
    </head>
@@ -56,12 +40,8 @@
         </div>
         <div class="grid__col recipe_info grid__col--2-of-12">
           <span class="icon net_thumbs">
-          {% if recipe.thumbsUp and recipe.thumbsDown %}
-            {{ recipe.thumbsUp - recipe.thumbsDown }}
-          {% elif recipe.thumbsUp and not recipe.thumbsDown %}
+          {% if recipe.thumbsUp %}
             {{ recipe.thumbsUp }}
-          {% elif recipe.thumbsDown and not recipe.thumbsUp %}
-            {{ recipe.thumbsUp}}
           {% else %}
             0
           {% endif %}
@@ -72,16 +52,6 @@
           <span class="thumbsUpCount">
           {% if recipe.thumbsUp %} 
             {{ recipe.thumbsUp }}
-          {% else %}
-            0
-          {% endif %}
-          </span>
-          <a href="javascript:thumbsDown('{{recipe.key.id()}}');">
-            <span class="icon-thumbs-down"></span>
-          </a>
-          <span class="thumbsDownCount">
-          {% if recipe.thumbsDown %} 
-            {{ recipe.thumbsDown }}
           {% else %}
             0
           {% endif %}
