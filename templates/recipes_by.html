@@ -8,25 +8,27 @@
   </head>
   <body class="page recipes_view">
     <div class="container">
-      <header>
-        <a href="/"><img src="/images/logo_page.png" alt="homepage" /></a>
-        <nav>
-          <a href="/recipes/new">new<br />recipe</a>
-          
-          <a href="/recipes/saved">saved<br />recipes</a>
-          <a href="/recipes/all">all<br />recipes</a>
-        </nav>
-      </header>
+      {{ header }}
       <section class="author_info">
       	<div class="grid">
-      		<div class="grid__col grid__col-1-of-6">
+      		<div class="grid__col grid__col--2-of-6">
+      			<h1>{{ author }}'s Recipes</h1>
+      		</div>
+      		<div class="grid__col grid__col--2-of-6">
       			{% if author_pic %}
-        			<img src="{{ author_pic }}" alt="{{ author }}" />
+      				<div id="author_pic" style="background-image: url({{ author_pic }})"></div>
+      			{% else %}
+      				<div id="author_pic" style="background-image: url(/images/author_placeholder.png)"></div>
         		{% endif %}
       		</div>
-      		<div class="grid__col grid__col-5-of-6">
-      			<h1>{{ author }}'s Recipes</h1>
-        		<h2><span class="icon-location"></span>{{ author_location }}</h2>
+      		<div class="grid__col grid__col--2-of-6">
+        		<h2><span class="icon-location"></span>
+        			{% if author_location %}
+        			{{ author_location }}
+        			{% else %}
+        			Unknown
+        			{% endif %}
+        		</h2>
       		</div>
       	</div>
       </section>

@@ -1203,16 +1203,19 @@ section.grid:last-child {
 }
 /* line 9, scss/pages/_recipes_forms.scss */
 .forms fieldset img {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   margin-top: 20px;
   width: 50%;
   padding: 10px;
   border: 1px solid #969696;
 }
-/* line 15, scss/pages/_recipes_forms.scss */
+/* line 16, scss/pages/_recipes_forms.scss */
 .forms #removeIngredient, .forms #removeInstruction {
   float: right;
 }
-/* line 18, scss/pages/_recipes_forms.scss */
+/* line 19, scss/pages/_recipes_forms.scss */
 .forms fieldset {
   width: 46%;
   padding: 2%;
@@ -1221,12 +1224,12 @@ section.grid:last-child {
   display: inline-block;
   vertical-align: top;
 }
-/* line 25, scss/pages/_recipes_forms.scss */
+/* line 26, scss/pages/_recipes_forms.scss */
 .forms fieldset label {
   padding-right: 1%;
   text-align: right;
 }
-/* line 29, scss/pages/_recipes_forms.scss */
+/* line 30, scss/pages/_recipes_forms.scss */
 .forms fieldset input[type='text'], .forms fieldset input[type='file'] {
   background: 0;
   border: 0;
@@ -1234,11 +1237,11 @@ section.grid:last-child {
   margin-top: 5px;
   width: 99%;
 }
-/* line 36, scss/pages/_recipes_forms.scss */
+/* line 37, scss/pages/_recipes_forms.scss */
 .forms fieldset input[type='file'] {
   border-bottom: 0;
 }
-/* line 39, scss/pages/_recipes_forms.scss */
+/* line 40, scss/pages/_recipes_forms.scss */
 .forms fieldset input[type='submit'] {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1283,7 +1286,7 @@ section.grid:last-child {
 /* line 27, scss/pages/_recipes_view.scss */
 .recipes_view .shade {
   height: 250px;
-  background-color: black;
+  background-color: #73afb6;
   margin-bottom: 50px;
   text-align: center;
   color: white;
@@ -1314,16 +1317,25 @@ section.author_info {
   padding: 45px 5%;
 }
 /* line 53, scss/pages/_recipes_view.scss */
-section.author_info img {
-  background: #fff;
-  float: right;
-  height: 150px;
-  border: 1px solid #707070;
-  padding: 10px;
-  margin-right: 25px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+section.author_info #author_pic {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 10px solid white;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  background-position: center center;
+  margin: 0 auto;
+  display: block;
 }
-/* line 62, scss/pages/_recipes_view.scss */
+/* line 64, scss/pages/_recipes_view.scss */
+section.author_info .grid__col {
+  vertical-align: center;
+}
+/* line 67, scss/pages/_recipes_view.scss */
 section.author_info h1 {
   color: #fff;
+  text-align: right;
 }

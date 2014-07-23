@@ -26,7 +26,7 @@
   }
   .shade {
     height:250px;
-    background-color: black;
+    background-color: $color-primary-lighter;
     margin-bottom:50px;
     text-align:center;
     color:white;
@@ -50,16 +50,22 @@
 section.author_info {
   background: url('/images/author_bg.png');
   padding: 45px 5%;
-  img {
-    background: #fff;
-    float: right;
-    height: 150px;
-    border: 1px solid darken($grey, 15);
-    padding: 10px;
-    margin-right: 25px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+  #author_pic {
+    @include border-radius(50%);
+    border: 10px solid $white;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    background-position: center center;
+    margin: 0 auto;
+    display: block;
+  }
+  .grid__col {
+    vertical-align: center;
   }
   h1 {
     color: #fff;
+    text-align: right;
   }
 }

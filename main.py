@@ -170,17 +170,17 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'recipes' : recipes, 'author' : author[0].name , 'title' : 'Recipes by ' + author[0].name}
+        template_values = { 'header': GetHeader('recipe'), 'recipes' : recipes, 'author' : author[0].name , 'title' : 'Recipes by ' + author[0].name}
         if author[0].pic :
           template_values['author_pic'] = author[0].picUrl()
         if author[0].location :
           template_values['author_location'] = author[0].location
       else : 
         error = "This user has not uploaded any recipes."
-        template_values = { 'title': 'Error', 'error' : error }
+        template_values = { 'header': GetHeader('recipe'), 'title': 'Error', 'error' : error }
     else : 
       error = "This user doesn't not exist."
-      template_values = { 'title': 'Error', 'error' : error }
+      template_values = { 'header': GetHeader('recipe'), 'title': 'Error', 'error' : error }
     RecipesBy = jinja_environment.get_template('templates/recipes_by.html').render(template_values)
     self.response.write(RecipesBy)
 
