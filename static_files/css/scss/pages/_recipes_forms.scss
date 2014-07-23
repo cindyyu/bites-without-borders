@@ -12,6 +12,9 @@
 		padding: 10px;
 		border: 1px solid $grey;
 	}
+	#removeIngredient, #removeInstruction {
+		float: right;
+	}
 	fieldset {
 		width: 46%;
 		padding: 2%;

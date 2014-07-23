@@ -257,7 +257,7 @@ class DeleteRecipe(webapp2.RequestHandler):
         template_values = {'title': 'Error', 'error' : error } 
     else : 
       error = "The recipe you are trying to delete does not exist."
-      template_values = {'title': 'Error', 'error' : error } 
+      template_values = {'header': GetHeader('recipe'), 'title': 'Error', 'error' : error } 
     DeleteRecipePage = jinja_environment.get_template('templates/recipes_delete.html').render(template_values)
     self.response.write(DeleteRecipePage)
 
