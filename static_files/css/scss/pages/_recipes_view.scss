@@ -32,6 +32,14 @@
     color:white;
     background-size:100% 100%;
   }
+  #remove_saved_recipe {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    a.remove_saved {
+      color: $white;
+    }
+  }
   div.view_more {
     right: 10px;
   }

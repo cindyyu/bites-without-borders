@@ -353,6 +353,25 @@ class UserPic(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'image/png'
     self.response.write(image)
 
+class RemoveSavedRecipe(webapp2.RequestHandler):
+  def post(self): 
+    recipe_id = self.request.get("recipe_id")
+    user = UserInfo()
+    savedRecipes = user[0].savedRecipes
+    # find index of recipe within savedRecipes property
+    index = -1
+    for recipe in savedRecipes :
+      index += 1
+      if recipe != '' and int(recipe) == int(recipe_id) :
+        break;
+    if index > -1 :
+      del savedRecipes[index]
+    user[0].savedRecipes = savedRecipes
+    user[0].put()
+    RemoveSavedPage = jinja_environment.get_template('templates/recipes_remove_saved.html').render({'header' : GetHeader('recipe')})
+    self.response.write(RemoveSavedPage)
+
+
 app = webapp2.WSGIApplication([
   ('/', HomeHandler),
   ('/recipes/new', NewRecipe),
@@ -367,5 +386,6 @@ app = webapp2.WSGIApplication([
   ('/recipes/saved', SavedRecipes),
   ('/images', Image),
   ('/settings', UserSettings),
-  ('/userpic', UserPic)
+  ('/userpic', UserPic),
+  ('/recipes/saved/remove', RemoveSavedRecipe)
 ], debug=True)
