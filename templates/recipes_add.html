@@ -7,6 +7,14 @@
     <link href="/css/main.css" rel="stylesheet" />
     <script>
       var geocoder;
+      var removeIngredient = function() {
+        $("ul li:last-child").remove();
+        return false;
+      }
+      var removeInstruction = function() {
+        $("ol li:last-child").remove();
+        return false;
+      }
       var addNewIngredient = function() {
         $("ul").append("<li><input type='text' class='ingredient' /></li>");
         return false;
@@ -78,6 +86,8 @@
           $("a#addNewIngredient").on('click', addNewIngredient);
           $("a#addNewInstruction").on('click', addNewInstruction);
           $("input[type=submit]").on('click', submitNewRecipe);
+          $("a#removeIngredient").on('click', removeIngredient);
+          $("a#removeInstruction").on('click', removeInstruction);
         }
       );
     </script>
@@ -109,6 +119,7 @@
                 </li>
               </ul>
               <a id="addNewIngredient" href="#">add new ingredient</a>
+              <a id="removeIngredient" href="#">remove ingredient</a>
             </fieldset><fieldset>
               <label for="instructions">Instructions</label>
               <ol>
@@ -117,6 +128,7 @@
                 </li>
               </ol>
               <a id="addNewInstruction" href="#">add step</a>
+              <a id="removeInstruction" href="#">remove step</a>
             </fieldset><fieldset>
               <label for="instructions">Upload a Photo</label>
               <input type="file" name="img"/>
