@@ -43,3 +43,27 @@ div.status {
 		}
 	}
 }
+
+.error {
+	color: $white;
+	height: 100%;
+	& > div {
+		background: darken($error, 25);
+		display: table;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		div {
+			height: 100%;
+			display: table-cell; 
+			vertical-align: middle;
+			text-align: center;
+			a {
+				color: $white;
+				font-size: 1.5em;
+			}
+		}
+	}
+}

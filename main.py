@@ -361,6 +361,10 @@ class RemoveSavedRecipe(webapp2.RequestHandler):
     RemoveSavedPage = jinja_environment.get_template('templates/recipes_remove_saved.html').render({'header' : GetHeader('recipe')})
     self.response.write(RemoveSavedPage)
 
+class NotFound(webapp2.RequestHandler): 
+  def get(self):
+    ErrorPage = jinja_environment.get_template('templates/error.html').render()
+    self.response.write(ErrorPage)
 
 app = webapp2.WSGIApplication([
   ('/', HomeHandler),
@@ -376,5 +380,6 @@ app = webapp2.WSGIApplication([
   ('/images', Image),
   ('/settings', UserSettings),
   ('/userpic', UserPic),
-  ('/recipes/saved/remove', RemoveSavedRecipe)
+  ('/recipes/saved/remove', RemoveSavedRecipe), 
+  ('/.*', NotFound)
 ], debug=True)

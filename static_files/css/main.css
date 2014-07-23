@@ -1055,6 +1055,34 @@ div.status.success a {
   color: white;
 }
 
+/* line 47, scss/pages/_generic.scss */
+.error {
+  color: white;
+  height: 100%;
+}
+/* line 50, scss/pages/_generic.scss */
+.error > div {
+  background: #87403f;
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 58, scss/pages/_generic.scss */
+.error > div div {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 63, scss/pages/_generic.scss */
+.error > div div a {
+  color: white;
+  font-size: 1.5em;
+}
+
 /* line 2, scss/pages/_home.scss */
 #homepage .view_more {
   position: absolute;
