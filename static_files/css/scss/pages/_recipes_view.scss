@@ -83,6 +83,7 @@ section.author_info {
     @include border-radius(50%);
     border: 10px solid $white;
     background-size: cover;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     width: 200px;
     height: 200px;
     background-color: #fff;

@@ -72,6 +72,9 @@
 #recipeInfo {
 	width: 250px;
 	height: 200px;
+	a {
+		color: $color-primary;
+	}
 	img {
 		display: block;
 		margin: 10px auto;
