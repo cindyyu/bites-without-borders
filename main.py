@@ -239,7 +239,7 @@ class ViewAllRecipes(webapp2.RequestHandler):
   def get(self): 
     # fetch all recipes
     recipes = Recipe.query().fetch()
-    template_values = {'recipes' : recipes, 'title': 'All Recipes'}
+    template_values = {'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'All Recipes'}
     ViewAllRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
     self.response.write(ViewAllRecipes)
 
@@ -305,7 +305,7 @@ class SavedRecipes(webapp2.RequestHandler):
           savedRecipe = Recipe.get_by_id(int(recipe))
           if savedRecipe :
             recipes.append(savedRecipe)
-      template_values = { 'recipes' : recipes, 'title': 'Your Saved Recipes' } 
+      template_values = { 'header': GetHeader('recipe'), 'recipes' : recipes, 'title': 'Your Saved Recipes' } 
       SavedRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
       self.response.write(SavedRecipes)
     else :

@@ -1,11 +1,15 @@
-<header>
-	<a href="/"><img src="/images/logo_page.png" alt="homepage" /></a>
-	<nav>
-	  <a href="/recipes/new">new<br />recipe</a>
-	  {% if user_recipes_url %}
-	  	<a href="{{ user_recipes_url }}">your<br />recipes</a>
-	  {% endif %}
-	  <a href="/recipes/saved">saved<br />recipes</a>
-	  <a href="/recipes/all">all<br />recipes</a>
-	</nav>
+<header class="grid">
+	<div class="grid__col grid__col--1-of-4">
+		<a href="/"><img src="/images/logo_page.png" alt="homepage" /></a>
+	</div>
+	<div class="grid__col grid__col--3-of-4">
+		<nav>
+		  <a href="/recipes/new">new<br />recipe</a>
+		  {% if user_recipes_url %}
+		  	<a href="{{ user_recipes_url }}">your<br />recipes</a>
+		  {% endif %}
+		  <a href="/recipes/saved">saved<br />recipes</a>
+		  <a href="/recipes/all">all<br />recipes</a>
+		</nav>
+	</div>
 </header>
