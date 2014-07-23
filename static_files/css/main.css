@@ -1002,24 +1002,25 @@ h2 {
 .page {
   background: url("/images/bg.jpg") no-repeat;
   background-size: cover;
+  background-position: center center;
 }
-/* line 4, scss/pages/_generic.scss */
+/* line 5, scss/pages/_generic.scss */
 .page header {
   background: rgba(255, 255, 255, 0.5);
   padding: 25px;
 }
-/* line 8, scss/pages/_generic.scss */
+/* line 9, scss/pages/_generic.scss */
 .page nav {
   display: inline-block;
   float: right;
 }
-/* line 11, scss/pages/_generic.scss */
+/* line 12, scss/pages/_generic.scss */
 .page nav a {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   color: #73afb6;
-  background: white;
+  background: #f7f7f7;
   display: inline-block;
   font-weight: 500;
   line-height: 20px;
@@ -1029,27 +1030,27 @@ h2 {
   text-transform: uppercase;
   vertical-align: middle;
 }
-/* line 23, scss/pages/_generic.scss */
+/* line 24, scss/pages/_generic.scss */
 .page nav a:hover {
   background: #e2da99;
   color: white;
 }
 
-/* line 31, scss/pages/_generic.scss */
+/* line 32, scss/pages/_generic.scss */
 div.status {
   padding: 15px;
 }
-/* line 33, scss/pages/_generic.scss */
+/* line 34, scss/pages/_generic.scss */
 div.status.error {
   background: #c48281;
   color: white;
 }
-/* line 37, scss/pages/_generic.scss */
+/* line 38, scss/pages/_generic.scss */
 div.status.success {
   background: #aac481;
   color: white;
 }
-/* line 40, scss/pages/_generic.scss */
+/* line 41, scss/pages/_generic.scss */
 div.status.success a {
   color: white;
 }
@@ -1329,7 +1330,7 @@ section.grid:last-child {
   background: transparent;
   color: white;
   display: none;
-  margin-top: 40%;
+  margin-top: 36%;
 }
 /* line 32, scss/pages/_recipes_view.scss */
 .recipes_view #recipe-snippets .recipe_view:hover {
