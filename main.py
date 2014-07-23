@@ -252,10 +252,10 @@ class DeleteRecipe(webapp2.RequestHandler):
       # check if user has permission to edit the recipe
       if recipe.author == UserId() : 
         recipe.key.delete()
-        template_values = {}
+        template_values = {'header' : GetHeader('recipe')}
       else :
         error = "You do not have permission to do this."
-        template_values = {'title': 'Error', 'error' : error } 
+        template_values = {'header': GetHeader('recipe'), 'title': 'Error', 'error' : error } 
     else : 
       error = "The recipe you are trying to delete does not exist."
       template_values = {'header': GetHeader('recipe'), 'title': 'Error', 'error' : error } 

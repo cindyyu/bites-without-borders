@@ -1056,6 +1056,12 @@ div.status.success a {
 }
 
 /* line 2, scss/pages/_home.scss */
+#homepage .view_more {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+/* line 7, scss/pages/_home.scss */
 #homepage div#map-canvas {
   background: #B3DAEE;
   height: 100%;
@@ -1065,7 +1071,7 @@ div.status.success a {
   width: 100%;
   z-index: 0;
 }
-/* line 11, scss/pages/_home.scss */
+/* line 16, scss/pages/_home.scss */
 #homepage div#sidebar {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1079,33 +1085,33 @@ div.status.success a {
   text-align: center;
   z-index: 1;
 }
-/* line 22, scss/pages/_home.scss */
+/* line 27, scss/pages/_home.scss */
 #homepage #options {
   position: absolute;
   bottom: 2.5%;
   right: 10%;
 }
-/* line 26, scss/pages/_home.scss */
+/* line 31, scss/pages/_home.scss */
 #homepage #options a {
   color: #5e9ca0;
   margin-left: 25px;
 }
-/* line 29, scss/pages/_home.scss */
+/* line 34, scss/pages/_home.scss */
 #homepage #options a:hover {
   color: #73afb6;
 }
-/* line 34, scss/pages/_home.scss */
+/* line 39, scss/pages/_home.scss */
 #homepage a img {
   border: 0;
   display: block;
   margin: 0 auto;
 }
-/* line 39, scss/pages/_home.scss */
+/* line 44, scss/pages/_home.scss */
 #homepage nav {
   margin-top: 25px;
   width: 100%;
 }
-/* line 42, scss/pages/_home.scss */
+/* line 47, scss/pages/_home.scss */
 #homepage nav a {
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1123,7 +1129,7 @@ div.status.success a {
   text-transform: uppercase;
   width: 76%;
 }
-/* line 56, scss/pages/_home.scss */
+/* line 61, scss/pages/_home.scss */
 #homepage nav a [class^='icon'] {
   color: #e2da99;
   font-size: 1.25em;
@@ -1131,41 +1137,41 @@ div.status.success a {
   right: 10%;
   top: 8px;
 }
-/* line 63, scss/pages/_home.scss */
+/* line 68, scss/pages/_home.scss */
 #homepage nav a:hover {
   background: #5e9ca0;
   color: white;
 }
-/* line 66, scss/pages/_home.scss */
+/* line 71, scss/pages/_home.scss */
 #homepage nav a:hover [class^='icon'] {
   color: #e2da99;
 }
 
-/* line 73, scss/pages/_home.scss */
+/* line 78, scss/pages/_home.scss */
 #recipeInfo {
   width: 250px;
   height: 200px;
 }
-/* line 76, scss/pages/_home.scss */
+/* line 81, scss/pages/_home.scss */
 #recipeInfo a {
   color: #5e9ca0;
 }
-/* line 79, scss/pages/_home.scss */
+/* line 84, scss/pages/_home.scss */
 #recipeInfo img {
   display: block;
   margin: 10px auto;
   height: 100px;
   width: auto;
 }
-/* line 85, scss/pages/_home.scss */
+/* line 90, scss/pages/_home.scss */
 #recipeInfo h3 {
   margin: 0;
 }
-/* line 87, scss/pages/_home.scss */
+/* line 92, scss/pages/_home.scss */
 #recipeInfo h3 a {
   float: right;
 }
-/* line 91, scss/pages/_home.scss */
+/* line 96, scss/pages/_home.scss */
 #recipeInfo div {
   background-size: cover;
   background-position: center center;
