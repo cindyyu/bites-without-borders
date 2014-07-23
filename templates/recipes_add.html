@@ -72,12 +72,17 @@
         geocoder = new google.maps.Geocoder();
         var location = $("#location").val();
         geocoder.geocode( { 'address': location}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            calculatedLatLng = results[0].geometry.location;
-            $("input#latlng").val( results[0].geometry.location );
-            $("form").submit();
+          // check if all forms have been filled out
+          if ( $("input[name=name").val() && $("input[name=cooktime").val() && $("input[name=servings").val() && $("input[name=location_name").val() ) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              calculatedLatLng = results[0].geometry.location;
+              $("input#latlng").val( results[0].geometry.location );
+                $("form").submit();
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
           } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            alert('You must fill out all fields!');
           }
         });
       }
@@ -101,21 +106,21 @@
           <form action="" enctype="multipart/form-data" method="post">
             <fieldset>
               <label for="name">Recipe Name:</label>
-              <input type="text" name="name" />
+              <input type="text" name="name" required/>
             </fieldset><fieldset>
               <label for="cooktime">Cook Time:</label>
-              <input type="text" name="cooktime" />
+              <input type="text" name="cooktime" required/>
             </fieldset><fieldset>
               <label for="servings">Servings</label>
-              <input type="text" name="servings" />
+              <input type="text" name="servings" required/>
             </fieldset><fieldset>
               <label for="location">Location</label>
-              <input type="text" name="location_name" id="location" />
+              <input type="text" name="location_name" id="location" required/>
             </fieldset><fieldset>
               <label for="ingredients">Ingredients</label><br />
               <ul>
                 <li>
-                  <input type="text" class="ingredient" />
+                  <input type="text" class="ingredient" required/>
                 </li>
               </ul>
               <a id="addNewIngredient" href="#"><span class="icon-add"></span> add ingredient</a>
@@ -124,7 +129,7 @@
               <label for="instructions">Instructions</label>
               <ol>
                 <li>
-                  <input type="text" class="instruction" />
+                  <input type="text" class="instruction" required/>
                 </li>
               </ol>
               <a id="addNewInstruction" href="#"><span class="icon-add"></span> add step</a>

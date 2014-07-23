@@ -72,12 +72,17 @@
         geocoder = new google.maps.Geocoder();
         var location = $("#location").val();
         geocoder.geocode( { 'address': location}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            calculatedLatLng = results[0].geometry.location;
-            $("input#latlng").val( results[0].geometry.location );
-            $("form").submit();
+          // check if all forms have been filled out
+          if ( $("input[name=name").val() && $("input[name=cooktime").val() && $("input[name=servings").val() && $("input[name=location_name").val() ) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              calculatedLatLng = results[0].geometry.location;
+              $("input#latlng").val( results[0].geometry.location );
+                $("form").submit();
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
           } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            alert('You must fill out all fields!');
           }
         });
       }
