@@ -16,6 +16,26 @@
         color: #fff;
       }
     }
+    .recipe_view {
+      position: absolute; 
+      height: 100%; 
+      width: 100%;
+      top: 0; 
+      left: 0;
+      z-index: 2;
+      h2 {
+        background: transparent;
+        color: $white;
+        display: none;
+        margin-top: 40%;
+      }
+      &:hover {
+        background: rgba(0,0,0,0.35);
+        h2 {
+          display: block;
+        }
+      }
+    }
   }
   #recipe-snippets .grid__col {
     border-left: 12.5px solid #fff;
@@ -40,13 +60,13 @@
       color: $white;
     }
   }
-  div.view_more {
+  div.thumbs_up {
     right: 10px;
   }
   div.location {
     left: 10px;
   }
-  div.location, div.view_more {
+  div.location, div.thumbs_up {
     position:absolute;
     bottom: 10px;
     background: rgba(0,0,0,0.65);

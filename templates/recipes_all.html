@@ -31,13 +31,16 @@
           {% if index % 4 == 1 %}
             <div class="grid">
               <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <a class="recipe_view" href="{{ recipe.viewUrl() }}">
+                  <h2>view more</h2>
+                </a>
                 <h2><a href="{{ recipe.viewUrl() }}">{{ recipe.name }} </a></h2>
                 <div class="location">
                   <span class="icon-location"></span>
                   {{ recipe.location_name }}
                 </div>
-                <div class="view_more">
-                  <a href="{{ recipe.viewUrl() }}">view more</a>
+                <div class="thumbs_up">
+                    {{ recipe.thumbsUp }} <span class="icon-thumbs-up"></span>
                 </div>
                 {% if title == 'Your Saved Recipes' %}
                 <form id="remove_saved_recipe" method="post" action="/recipes/saved/remove">
@@ -48,13 +51,16 @@
               </div>
           {% elif index % 4 == 0 %}
               <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <a class="recipe_view" href="{{ recipe.viewUrl() }}">
+                  <h2>view more</h2>
+                </a>
                 <h2>{{ recipe.name }}</h2>
                 <div class="location">
                   <span class="icon-location"></span>
                   {{ recipe.location_name }}
                 </div>
-                <div class="view_more">
-                <a href="{{ recipe.viewUrl() }}">view more</a>
+                <div class="thumbs_up">
+                  {{ recipe.thumbsUp }} <span class="icon-thumbs-up"></span>
                 </div>
                 {% if title == 'Your Saved Recipes' %}
                 <form id="remove_saved_recipe" method="post" action="/recipes/saved/remove">
@@ -66,13 +72,16 @@
             </div>
           {% else %}
               <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <a class="recipe_view" href="{{ recipe.viewUrl() }}">
+                  <h2>view more</h2>
+                </a>
                 <h2>{{ recipe.name }}</h2>
                 <div class="location">
                   <span class="icon-location"></span>
                   {{ recipe.location_name }}
                 </div>
-                <div class="view_more">
-                  <a href="{{ recipe.viewUrl() }}">view more</a>
+                <div class="thumbs_up">
+                    {{ recipe.thumbsUp }} <span class="icon-thumbs-up"></span>
                 </div>
                 {% if title == 'Your Saved Recipes' %}
                 <form id="remove_saved_recipe" method="post" action="/recipes/saved/remove">

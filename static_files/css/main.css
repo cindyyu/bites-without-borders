@@ -1315,7 +1315,31 @@ section.grid:last-child {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
-/* line 20, scss/pages/_recipes_view.scss */
+/* line 19, scss/pages/_recipes_view.scss */
+.recipes_view #recipe-snippets .recipe_view {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+/* line 26, scss/pages/_recipes_view.scss */
+.recipes_view #recipe-snippets .recipe_view h2 {
+  background: transparent;
+  color: white;
+  display: none;
+  margin-top: 40%;
+}
+/* line 32, scss/pages/_recipes_view.scss */
+.recipes_view #recipe-snippets .recipe_view:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+/* line 34, scss/pages/_recipes_view.scss */
+.recipes_view #recipe-snippets .recipe_view:hover h2 {
+  display: block;
+}
+/* line 40, scss/pages/_recipes_view.scss */
 .recipes_view #recipe-snippets .grid__col {
   border-left: 12.5px solid #fff;
   border-right: 12.5px solid #fff;
@@ -1323,7 +1347,7 @@ section.grid:last-child {
   background-size: cover;
   background-position: center center;
 }
-/* line 27, scss/pages/_recipes_view.scss */
+/* line 47, scss/pages/_recipes_view.scss */
 .recipes_view .shade {
   height: 250px;
   background-color: #73afb6;
@@ -1332,42 +1356,42 @@ section.grid:last-child {
   color: white;
   background-size: 100% 100%;
 }
-/* line 35, scss/pages/_recipes_view.scss */
+/* line 55, scss/pages/_recipes_view.scss */
 .recipes_view #remove_saved_recipe {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 39, scss/pages/_recipes_view.scss */
+/* line 59, scss/pages/_recipes_view.scss */
 .recipes_view #remove_saved_recipe a.remove_saved {
   color: white;
 }
-/* line 43, scss/pages/_recipes_view.scss */
-.recipes_view div.view_more {
+/* line 63, scss/pages/_recipes_view.scss */
+.recipes_view div.thumbs_up {
   right: 10px;
 }
-/* line 46, scss/pages/_recipes_view.scss */
+/* line 66, scss/pages/_recipes_view.scss */
 .recipes_view div.location {
   left: 10px;
 }
-/* line 49, scss/pages/_recipes_view.scss */
-.recipes_view div.location, .recipes_view div.view_more {
+/* line 69, scss/pages/_recipes_view.scss */
+.recipes_view div.location, .recipes_view div.thumbs_up {
   position: absolute;
   bottom: 10px;
   background: rgba(0, 0, 0, 0.65);
 }
-/* line 54, scss/pages/_recipes_view.scss */
+/* line 74, scss/pages/_recipes_view.scss */
 .recipes_view div.view_more a {
   color: white;
 }
 
-/* line 58, scss/pages/_recipes_view.scss */
+/* line 78, scss/pages/_recipes_view.scss */
 section.author_info {
   background: url("/images/author_bg.png");
   color: white;
   padding: 45px 5%;
 }
-/* line 62, scss/pages/_recipes_view.scss */
+/* line 82, scss/pages/_recipes_view.scss */
 section.author_info #author_pic {
   border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1381,16 +1405,16 @@ section.author_info #author_pic {
   margin: 0 auto;
   display: block;
 }
-/* line 73, scss/pages/_recipes_view.scss */
+/* line 93, scss/pages/_recipes_view.scss */
 section.author_info .grid__col {
   vertical-align: center;
 }
-/* line 76, scss/pages/_recipes_view.scss */
+/* line 96, scss/pages/_recipes_view.scss */
 section.author_info .grid__col:first-child {
   text-align: right;
   font-size: 18px;
 }
-/* line 80, scss/pages/_recipes_view.scss */
+/* line 100, scss/pages/_recipes_view.scss */
 section.author_info h1 {
   color: #fff;
   font-size: 1.5em;
