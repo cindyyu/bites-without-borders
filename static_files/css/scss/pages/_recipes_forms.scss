@@ -6,6 +6,12 @@
 	a {
 		color: $color-primary;
 	}
+	fieldset img {
+		margin-top: 20px;
+		width: 50%;
+		padding: 10px;
+		border: 1px solid $grey;
+	}
 	fieldset {
 		width: 46%;
 		padding: 2%;
@@ -17,11 +23,15 @@
 			padding-right: 1%;
 			text-align: right;
 		}
-		input[type='text'] {
+		input[type='text'], input[type='file'] {
 			background: 0;
 			border: 0;
 			border-bottom: 1px solid $grey-light;
+			margin-top: 5px;
 			width: 99%;
+		}
+		input[type='file'] {
+			border-bottom: 0;
 		}
 		input[type='submit'] {
 			@include border-radius(3px);

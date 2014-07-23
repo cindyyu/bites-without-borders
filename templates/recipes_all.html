@@ -1,10 +1,74 @@
-{% if recipes %}
-	{% for recipe in recipes %}
-		<div>
-			<h1>{{ recipe.name }}</h1>
-			<a href="{{ recipe.viewUrl() }}">view more</a>
-		</div>
-	{% endfor %}
-{% else %}
-	there are no recipes in the database
-{% endif %}
+<!DOCTYPE html>
+<html>
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="/css/main.css" rel="stylesheet" />
+    <title>hey</title>
+  </head>
+  <body class="page recipes_view">
+    <div class="container">
+      <header>
+        <a href="/"><img src="/images/logo_page.png" alt="homepage" /></a>
+        <nav>
+          <a href="/recipes/new">new<br />recipe</a>
+          
+          <a href="/recipes/saved">saved<br />recipes</a>
+          <a href="/recipes/all">all<br />recipes</a>
+        </nav>
+      </header>
+    </div>
+    <div class="bg-white" id="recipe-snippets">
+      <section>
+      {% if recipes %}
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {% set index = 1 %}
+        {% for recipe in recipes %}
+          {% if index % 4 == 1 %}
+            <div class="grid">
+              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <h2><a href="{{ recipe.viewUrl() }}">{{ recipe.name }}</a></h2>
+                <div class="location">
+                  <span class="icon-location"></span>
+                  {{ recipe.location_name }}
+                </div>
+                <div class="view_more">
+                  <a href="{{ recipe.viewUrl() }}">view more
+                </a>
+                </div>
+              </div>
+          {% elif index % 4 == 0 %}
+              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <h2>{{ recipe.name }}</h2>
+                <div class="location">
+                  <span class="icon-location"></span>
+                  {{ recipe.location_name }}
+                </div>
+                <div class="view_more">
+                  <a href="{{ recipe.viewUrl() }}">view more</a>
+                </div>
+              </div>
+            </div>
+          {% else %}
+              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+                <h2>{{ recipe.name }}</h2>
+                <div class="location">
+                  <span class="icon-location"></span>
+                  {{ recipe.location_name }}
+                </div>
+                <div class="view_more">
+                  <a href="{{ recipe.viewUrl() }}">view more</a>
+                </div>
+              </div>          
+          {% endif %}
+          {% set index = index + 1 %}
+        {% endfor %}
+      {% else %}
+        <h1>Oh no!</h1>
+        You haven't thumb-up'd any recipes. To save recipes, thumb up recipes by clicking the green thumb-up icon on recipe pages.
+      {% endif %} 
+      </section>
+    </div>
+  </body>
+</html>

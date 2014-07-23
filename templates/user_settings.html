@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfoJeJmD19uB8JZ-kfvJoKp5rxyRy7VOo"></script>
+    <link href="/css/main.css" rel="stylesheet" />
+  </head>
+  <body class="page forms">
+    <div class="container">
+      {{ header }}
+      <section class="grid bg-white">
+        <div class="grid__col grid__col-1-of-1 grid__col--centered">
+          <h2>Edit User Settings</h2>
+            {% if error %}
+              <div class="status error">
+                {{ error }}
+              </div>
+            {% else %}
+              {% if success %}
+                <div class="status success">
+                Your edit was successful. 
+                </div>
+              {% endif %}
+            {% endif %}
+					<form action="" enctype="multipart/form-data" method="post">
+						<fieldset>
+							<label for="location">Location</label>
+							<input type="text" name="location" value="{{ user.location }}" />
+						</fieldset><fieldset>
+							<label for="image">Upload a user image</label>
+							<input type="file" name="image" />
+						</fieldset><fieldset>
+						{% if user.pic %}
+							Your current user pic: <br />
+							<img src="{{ user.picUrl() }}" alt="" />
+						{% else %}
+							no image uploaded
+						{% endif %}
+						</fieldset><fieldset>
+							<input type="submit" value="Save Settings" />
+						</fieldset>
+					</form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

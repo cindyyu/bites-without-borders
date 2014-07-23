@@ -1,0 +1,60 @@
+.recipes_view {
+  #recipe-snippets {
+    padding: 50px 0;
+    width: 100%;
+    section {
+      width: 90%;
+      margin: auto;
+    }
+    h2 {
+      text-shadow: 3px 3px 3px rgba(0,0,0,.5);
+      a {
+        background: rgba(0,0,0,.5);
+        color: #fff;
+      }
+    }
+  }
+  #recipe-snippets .grid__col {
+    border-left: 12.5px solid #fff;
+    border-right: 12.5px solid #fff;
+    position:relative;
+  }
+  .shade {
+    height:250px;
+    background-color: black;
+    margin-bottom:50px;
+    text-align:center;
+    color:white;
+    background-size:100% 100%;
+  }
+  div.view_more {
+    right: 10px;
+  }
+  div.location {
+    left: 10px;
+  }
+  div.location, div.view_more {
+    position:absolute;
+    bottom: 10px;
+    background: rgba(0,0,0,0.65);
+  }
+  div.view_more a {
+    color:white;
+  }
+}
+section.author_info {
+  background: url('/images/author_bg.png');
+  padding: 45px 5%;
+  img {
+    background: #fff;
+    float: right;
+    height: 150px;
+    border: 1px solid darken($grey, 15);
+    padding: 10px;
+    margin-right: 25px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+  }
+  h1 {
+    color: #fff;
+  }
+}

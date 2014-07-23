@@ -170,7 +170,11 @@ class ViewRecipesBy(webapp2.RequestHandler):
       # check if the user has any recipes
       recipes = Recipe.query().filter(Recipe.author == author_id).fetch()
       if recipes : 
-        template_values = { 'recipes' : recipes, 'author' : author[0].name, 'author_pic' : author[0].picUrl() }
+        template_values = { 'recipes' : recipes, 'author' : author[0].name }
+        if author[0].pic :
+          template_values['author_pic'] = author[0].picUrl()
+        if author[0].location :
+          template_values['author_location'] = author[0].location
       else : 
         error = "This user has not uploaded any recipes."
         template_values = { 'error' : error }
@@ -235,7 +239,7 @@ class ViewAllRecipes(webapp2.RequestHandler):
   def get(self): 
     # fetch all recipes
     recipes = Recipe.query().fetch()
-    template_values = {'recipes' : recipes}
+    template_values = {'recipes' : recipes, 'title': 'All Recipes'}
     ViewAllRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
     self.response.write(ViewAllRecipes)
 
@@ -301,7 +305,7 @@ class SavedRecipes(webapp2.RequestHandler):
           savedRecipe = Recipe.get_by_id(int(recipe))
           if savedRecipe :
             recipes.append(savedRecipe)
-      template_values = { 'recipes' : recipes } 
+      template_values = { 'recipes' : recipes, 'title': 'Your Saved Recipes' } 
       SavedRecipes = jinja_environment.get_template('templates/recipes_all.html').render(template_values)
       self.response.write(SavedRecipes)
     else :
@@ -316,6 +320,7 @@ class UserSettings(webapp2.RequestHandler) :
     else :
       error = "an error occurred"
       template_values = { 'error': error }
+    template_values['header'] = GetHeader('recipe')
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
     self.response.write(SettingsPage)
   def post(self) : 
@@ -328,7 +333,7 @@ class UserSettings(webapp2.RequestHandler) :
       if updated_image != '' : 
         user.pic = updated_image
       user.put()
-      template_values = { 'success': True, 'user': user }
+      template_values = { 'success': True, 'user': user, 'header': GetHeader('recipe') }
     SettingsPage = jinja_environment.get_template('templates/user_settings.html').render(template_values)
     self.response.write(SettingsPage)
 

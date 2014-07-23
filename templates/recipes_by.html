@@ -1,13 +1,87 @@
-{% if error %}
-	{{ error }}
-{% else %}
-<h1>recipes by {{ author }}</h1>
-<img src="{{ author_pic }}" alt="" /><br />
-
-{% for recipe in recipes %}
-	<b>recipe name</b> {{ recipe.name }}
-	<b>recipe ingredients</b> {{ recipe.ingredients }}
-	<a href="{{ recipe.viewUrl() }}">view more</a>
-{% endfor %}
-
-{% endif %}
+<!DOCTYPE html>
+<html>
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="/css/main.css" rel="stylesheet" />
+    <title>hey</title>
+  </head>
+  <body class="page recipes_view">
+    <div class="container">
+      <header>
+        <a href="/"><img src="/images/logo_page.png" alt="homepage" /></a>
+        <nav>
+          <a href="/recipes/new">new<br />recipe</a>
+          
+          <a href="/recipes/saved">saved<br />recipes</a>
+          <a href="/recipes/all">all<br />recipes</a>
+        </nav>
+      </header>
+      <section class="author_info">
+      	<div class="grid">
+      		<div class="grid__col grid__col-1-of-6">
+      			{% if author_pic %}
+        			<img src="{{ author_pic }}" alt="{{ author }}" />
+        		{% endif %}
+      		</div>
+      		<div class="grid__col grid__col-5-of-6">
+      			<h1>{{ author }}'s Recipes</h1>
+        		<h2><span class="icon-location"></span>{{ author_location }}</h2>
+      		</div>
+      	</div>
+      </section>
+    </div>
+    <div class="bg-white" id="recipe-snippets">
+      <section>
+      {% if error %}
+      	{{ error }}
+      {% else %}
+	      {% if recipes %}
+	        {% set index = 1 %}
+	        {% for recipe in recipes %}
+	          {% if index % 4 == 1 %}
+	            <div class="grid">
+	              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+	                <h2><a href="{{ recipe.viewUrl() }}">{{ recipe.name }}</a></h2>
+	                <div class="location">
+	                  <span class="icon-location"></span>
+	                  {{ recipe.location_name }}
+	                </div>
+	                <div class="view_more">
+	                  <a href="{{ recipe.viewUrl() }}">view more
+	                </a>
+	                </div>
+	              </div>
+	          {% elif index % 4 == 0 %}
+	              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+	                <h2>{{ recipe.name }}</h2>
+	                <div class="location">
+	                  <span class="icon-location"></span>
+	                  {{ recipe.location_name }}
+	                </div>
+	                <div class="view_more">
+	                  <a href="{{ recipe.viewUrl() }}">view more</a>
+	                </div>
+	              </div>
+	            </div>
+	          {% else %}
+	              <div class="grid__col grid__col--3-of-12 shade" style="background-image: url({{ recipe.imageUrl() }})">
+	                <h2>{{ recipe.name }}</h2>
+	                <div class="location">
+	                  <span class="icon-location"></span>
+	                  {{ recipe.location_name }}
+	                </div>
+	                <div class="view_more">
+	                  <a href="{{ recipe.viewUrl() }}">view more</a>
+	                </div>
+	              </div>          
+	          {% endif %}
+	          {% set index = index + 1 %}
+	        {% endfor %}
+	      {% else %}
+	        there are no recipes in the database
+	      {% endif %} 
+	    {% endif %}
+      </section>
+    </div>
+  </body>
+</html>

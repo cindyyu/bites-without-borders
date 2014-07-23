@@ -85,7 +85,8 @@
 					marker = new google.maps.Marker({
 			      position: new google.maps.LatLng(latitude, longitude),
 			      map: map,
-			      infowindow: new google.maps.InfoWindow({content: recipeInfo, maxWidth: 500})
+			      infowindow: new google.maps.InfoWindow({content: recipeInfo, maxWidth: 500}),
+			      icon: '/images/pin.png'
   				})
 
 					google.maps.event.addListener(
