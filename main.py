@@ -158,7 +158,8 @@ class ViewIndividualRecipe(webapp2.RequestHandler):
       else :
         isOwner = False
       recipe_author_name = User.query().filter(User.user_id == recipe.author).fetch(1)[0].name
-      template_values = { 'title': recipe.name, 'recipe' : recipe, 'isOwner' : isOwner, 'header': GetHeader('recipe'), 'recipe_author_name': recipe_author_name } 
+      recipe_author_pic = User.query().filter(User.user_id == recipe.author).fetch(1)[0].picUrl()
+      template_values = { 'recipe_author_pic' : recipe_author_pic, 'title': recipe.name, 'recipe' : recipe, 'isOwner' : isOwner, 'header': GetHeader('recipe'), 'recipe_author_name': recipe_author_name } 
     IndividualRecipe = jinja_environment.get_template('templates/recipes_individual.html').render(template_values)
     self.response.write(IndividualRecipe)
 

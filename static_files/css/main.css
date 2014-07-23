@@ -1238,6 +1238,20 @@ section.grid:last-child {
   padding-bottom: 75px;
 }
 
+/* line 49, scss/pages/_recipes_individual.scss */
+a {
+  color: #5e9ca0;
+}
+
+/* line 52, scss/pages/_recipes_individual.scss */
+#author_pic {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #969696;
+  display: block;
+  margin: 0 auto 15px;
+}
+
 /* line 2, scss/pages/_recipes_forms.scss */
 .forms .grid__col-1-of-1 {
   margin: 0 75px;

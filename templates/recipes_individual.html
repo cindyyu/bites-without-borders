@@ -71,6 +71,7 @@
           {% endfor %}
           </ul>
           <h2>Author</h2>
+          <img src="{{ recipe_author_pic }}" alt="{{ recipe_author_name }}" id="author_pic" />
           <a href="/recipes/by/{{ recipe.author }}">View more recipes by {{ recipe_author_name }}.</a>
           {% if isOwner %}
             <h2>Options</h2>

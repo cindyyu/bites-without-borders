@@ -1,5 +1,5 @@
 <div id="sidebar">
-	<a href="/"><img src="/images/logo_homepage.png" alt="logo" /></a>
+	<a href="/"><img src="/images/logo_homepage.png" alt="logo" /></a><br /><br />
 	<div id="options">
 		<a href="/settings"><span class="icon-cog"></span> account settings</a><a href="{{ logout_url }}"><span class="icon-logout"></span> logout</a></p>
 	</div>
@@ -8,6 +8,7 @@
 	{% else %}
 	  Welcome back, <b>{{ name }}</b>!
 	{% endif %}	
+	<br />
 	<nav>
 	  <a href="/recipes/new">
 	  	new recipe

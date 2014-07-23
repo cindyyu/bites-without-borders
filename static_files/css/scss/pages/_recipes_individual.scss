@@ -46,3 +46,13 @@ ul li {
 section.grid:last-child {
 	padding-bottom: 75px;
 }
+a {
+	color: $color-primary;
+}
+#author_pic {
+	width: 60%;
+	padding: 10px;
+	border: 1px solid $grey;
+	display: block;
+	margin: 0 auto 15px;
+}
