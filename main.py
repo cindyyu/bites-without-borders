@@ -49,11 +49,12 @@ def GetHeader(type) :
     'name' : users.get_current_user().nickname()
   }
 
-  if dbUser :
-    header_values['user_recipes_url'] = '/recipes/by/' + str(dbUser[0].user_id)
+  if len(dbUser) > 0 :
+    user_recipes_url = '/recipes/by/' + str(dbUser[0].user_id)
+    header_values['user_recipes_url'] = user_recipes_url
 
   homepage_header = jinja_environment.get_template('templates/homepage_header.html').render(header_values)
-  recipe_header = jinja_environment.get_template('templates/recipes_header.html').render({'name' : name, 'user_recipes_url': '/recipes/by/' + str(dbUser[0].user_id)})
+  recipe_header = jinja_environment.get_template('templates/recipes_header.html').render(header_values)
 
   if type == 'homepage' : 
     return homepage_header
