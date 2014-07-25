@@ -17,5 +17,13 @@ bites-without-borders
   <li>Google Maps API</li>
   <li>jQuery</li>
 </ul>
-<b>When</b> July 2014
-<b>Why</b> Final group project for Google's Computer Science Summer Institute program. 
+<b>When</b> July 2014<br />
+<b>Why</b> Final group project for Google's Computer Science Summer Institute program. <br /><br />
+
+<b>To Work On</b> (if I pick up later)
+<ul>
+  <li>Use Images API to store two different sized images for recipes. (2 users & exceed bandwidth quota for free plan ..)</li>
+  <li>Form sanitization and other form input bugs.</li>
+  <li>Tags and filtering system. (maybe select between meal categorization and health needs (gf, dairyfree, etc.)</li>
+  <li>Design. (l0l)</li>
+</ul>
