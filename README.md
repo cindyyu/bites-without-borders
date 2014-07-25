@@ -16,5 +16,6 @@ bites-without-borders
   <li>Webapp2</li>
   <li>Google Maps API</li>
   <li>jQuery</li>
+</ul>
 <b>When</b> July 2014
 <b>Why</b> Final group project for Google's Computer Science Summer Institute program. 
